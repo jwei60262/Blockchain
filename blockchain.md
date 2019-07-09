@@ -1,3 +1,7 @@
+---
+typora-root-url: ./
+---
+
 # 1 Blockchain
 
 ## 1.1 What Is The Blockchain?
@@ -44,7 +48,7 @@ Things like blocks, hash values, memory pools, consensus, and more will all be i
 
 诸如块，哈希值，内存池，共识等内容都将被引入，定义并添加到您对区块链的理解中！
 
-![1562581366514](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1562581366514.png)
+![blockchain-framework](/images/blockchain-framework.png)
 
 ### 2.1.1 Financial Transactions
 
@@ -185,7 +189,7 @@ You can follow along with this demonstration at [Anders.com](https://anders.com/
 
 Digital ledger that contains the entire history of transactions made on the network.
 
-![blockchain-linked-hash](D:\git\blockchain\images\blockchain-linked-hash.png)
+![blockchain-linked-hash](/images/blockchain-linked-hash.png)
 
 #### 思考几个问题
 
@@ -229,15 +233,21 @@ We'll break down distributed peer-to-peer networks into a few core ideas. First,
 
 While being peer-to-peer allows open  communication across users,being distributed allows that information itself to be owned by those users.
 
-![peer-to-peer](D:\git\blockchain\images\peer-to-peer.png)
+Peer-to-Peer网络
 
-![p2p-app](D:\git\blockchain\images\p2p-app.png)
+![peer-to-peer](/images/peer-to-peer.png)
 
-![distributed-network](D:\git\blockchain\images\distributed-network.png)
+Peer-to-Peer应用
 
-![1562647628227](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1562647628227.png)
+![p2p-app](/images/p2p-app.png)
 
+几种网络类型
 
+![distributed-network](/images/distributed-network.png)
+
+Distributed Peer-to-Peer区块链网络
+
+![distributed-p2p-network](/images/distributed-p2p-network.png)
 
 ### 2.1.8 Memory Pool
 
