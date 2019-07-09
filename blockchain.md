@@ -48,7 +48,7 @@ Things like blocks, hash values, memory pools, consensus, and more will all be i
 
 ### 2.1.1 Financial Transactions
 
-Current State of Financial Transactions?
+Current State of Financial Transactions? 可信的第三方。
 
 Problems with the Current System?
 
@@ -187,7 +187,7 @@ Digital ledger that contains the entire history of transactions made on the netw
 
 ![blockchain-linked-hash](D:\git\blockchain\images\blockchain-linked-hash.png)
 
-#### Blockchain
+#### 思考几个问题
 
 > Valid block?
 
@@ -211,9 +211,37 @@ The answer is interesting. It's stored across a network of users that all have t
 
 我们通过区块链的基础知识完成了它。 做得好！ 更好地了解块和区块链是如何形成的很好，但它给我们留下了一个大问题。
 
-这些信息存储在哪里？！
+这些信息存储在哪里？
 
 答案很有趣。 它存储在一个用户网络中，这些用户都拥有自己的区块链副本。 没有用户拥有这些数据，每个人都可以访问，任何人都可以参与。
+
+### 2.1.7 Distributed Peer-to-Peer Networks
+
+The idea of a network is what allows the blockchain to bypass the need for 3rd parties like we discussed earlier.We'll go over how that happens, what the network is, and why it's so important to making an effective blockchain.
+
+We'll break down distributed peer-to-peer networks into a few core ideas. First, we'll define **distributed**, and then we'll define **peer-to-peer**. Finally, putting these ideas together helps you see how powerful this combination can be. Then we'll go over how this network helps support the entire system behind the blockchain.
+
+#### Key Terms
+
+> **Peer-to-Peer Network:** A network of computers that allows information to be shared across users.
+
+> **Distributed Network:** A network that allows information to spread out across many users.
+
+While being peer-to-peer allows open  communication across users,being distributed allows that information itself to be owned by those users.
+
+![peer-to-peer](D:\git\blockchain\images\peer-to-peer.png)
+
+![p2p-app](D:\git\blockchain\images\p2p-app.png)
+
+![distributed-network](D:\git\blockchain\images\distributed-network.png)
+
+![1562647628227](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1562647628227.png)
+
+
+
+### 2.1.8 Memory Pool
+
+
 
 ## 2.2 Blockchain Transactions
 
