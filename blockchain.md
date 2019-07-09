@@ -1,7 +1,3 @@
----
-typora-root-url: ./
----
-
 # 1 Blockchain
 
 ## 1.1 What Is The Blockchain?
