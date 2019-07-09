@@ -1,4 +1,8 @@
-# 1 Blockchain
+---
+typora-root-url: ./
+---
+
+# 1 Blockchain Overview
 
 ## 1.1 What Is The Blockchain?
 
@@ -16,19 +20,19 @@ The blockchain has the potential to revolutionize industries like finance, gover
 
 ## 1.2 Blockchain Overview
 
-区块链是一个共享的数据库
+区块链是一个共享的数据库：
 
 ![blockchain](/images/blockchain.png)
 
-一个区块包含多个交易
+一个区块包含多个交易：
 
 ![blockchain-with-tran](/images/blockchain-with-tran.png)
 
-每一个区块都有一个hash值
+每一个区块都有一个hash值：
 
 ![hash](/images/hash.png)
 
-通过hash将区块连成链
+通过hash将区块连成链：
 
 ![blockchain-with-hash](/images/blockchain-with-hash.png)
 
@@ -44,8 +48,6 @@ Things like blocks, hash values, memory pools, consensus, and more will all be i
 
 诸如块，哈希值，内存池，共识等内容都将被引入，定义并添加到您对区块链的理解中！
 
-![blockchain-framework](/images/blockchain-framework.png)
-
 ### 2.1.1 Financial Transactions
 
 Current State of Financial Transactions? 可信的第三方。
@@ -58,13 +60,13 @@ The blockchain is a huge topic spanning many platforms and industries. With so m
 
 The concepts and ideas bitcoin developed continue to influence all other blockchains. For that reason, we'll use bitcoin as a way to help walk through some important concepts in the program.
 
-In this section, we'll be starting off by going over the basics of Bitcoin!
+We'll be starting off by going over the basics of Bitcoin!
 
-区块链是一个跨越许多平台和行业的巨大话题。 每天都有很多学习和新的更新，很难知道从哪里开始。 我们相信最好的起点是一切都在这里 - 比特币！
+区块链是一个跨越许多平台和行业的巨大话题。 每天都有很多学习和新的更新，很难知道从哪里开始。我们相信最好的起点是一切都在这里 - 比特币！
 
 比特币开发的概念和想法继续影响所有其他区块链。 出于这个原因，我们将使用比特币作为一种方式来帮助您完成程序中的一些重要概念。
 
-在本节中，我们将首先介绍比特币的基础知识！
+我们将首先介绍比特币的基础知识！
 
 #### What is Bitcoin?
 
@@ -72,9 +74,15 @@ Bitcoin is not *THE* blockchain, it is *A* blockchain.
 
 Once you can grasp these core ideas of bitcoin you’ll be able to apply them anywhere.
 
-[Read:How to Time-Stamp a Digital Document](https://www.anf.es/pdf/Haber_Stornetta.pdf)
+比特币核心概念：
 
-[Read:Bitcoin: A Peer to Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
+![blockchain-framework](/images/blockchain-framework.png)
+
+**Resources**
+
+> Read: [How to Time-Stamp a Digital Document](https://www.anf.es/pdf/Haber_Stornetta.pdf)
+
+> Read: [Bitcoin: A Peer to Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
 
 ### 2.1.3 Hashing
 
@@ -92,7 +100,7 @@ Now that you have some idea of how hash values work, lets go through a simple de
 
 You can follow along with this demonstration at [Anders.com](https://anders.com/blockchain/hash.html).
 
-#### Resources
+**Resources**
 
 > [Anders.com](https://anders.com/blockchain/hash.html)
 
@@ -229,23 +237,100 @@ We'll break down distributed peer-to-peer networks into a few core ideas. First,
 
 While being peer-to-peer allows open  communication across users,being distributed allows that information itself to be owned by those users.
 
-Peer-to-Peer网络
+Peer-to-Peer网络：
 
 ![peer-to-peer](/images/peer-to-peer.png)
 
-Peer-to-Peer应用
+Peer-to-Peer应用：
 
 ![p2p-app](/images/p2p-app.png)
 
-几种网络类型
+几种网络类型：
 
 ![distributed-network](/images/distributed-network.png)
 
-Distributed Peer-to-Peer区块链网络
+Distributed Peer-to-Peer区块链网络：
 
 ![distributed-p2p-network](/images/distributed-p2p-network.png)
 
 ### 2.1.8 Memory Pool
+
+Before getting onto the blockchain or becoming part of the network, transactions go into what is known as the memory pool.
+
+The **memory pool** (also known as the **mempool**) is the waiting place for transactions before they enter the blockchain. The blockchain can only handle so much information at once, and the backlog of information goes here.
+
+在进入区块链或成为网络的一部分之前，交易进入所谓的内存池。
+
+**内存池**（也称为** mempool **）是进入区块链之前进行交易的等待场所。 区块链只能同时处理如此多的信息，积压的信息就在这里。
+
+Waiting place for all unconfirmed transactions before they are added to the blockchain.
+
+![mem-pool](/images/mem-pool.png)
+
+**Resources**
+
+> [Blockchain.com](https://www.blockchain.com/about/index.html)
+>
+> - See [Unconfirmed Transactions](https://blockchain.info/unconfirmed-transactions)
+> - Explore [Blockchain Data Charts](https://blockchain.info/charts)
+
+> [Bitcoin Visuals](https://bitcoinvisuals.com/stats) - Another fun site to check bitcoin stats (e.g. fees, mempool, block speed, and hashrate)
+
+### 2.1.9 Consensus
+
+**Consensus:**
+
+How the network reaches agreement about which transactions are most trustworthy.
+
+Consensus is a very large topic. 
+
+Consensus is how the blockchain makes decisions. Basically **consensus** is an idea, but the idea is implemented through many different algorithms. These algorithms are all different ways to try and achieve consensus more effectively. Things like **proof of work**, **proof of stake**, and **DBFT** are all consensus algorithms we'll discuss soon.
+
+共识是一个非常大的话题。
+
+共识是区块链如何做出决策。 基本上**共识**是一个想法，但这个想法是通过许多不同的算法实现的。这些算法都是尝试更有效地达成共识的不同方法。像**工作证明**，**证明**和** DBFT **这些都是我们将很快讨论的共识算法。
+
+![byzantine-generals-problem](/images/byzantine-generals-problem.png)
+
+**Byzantine Generals Problem**
+
+1. 将军中间有叛徒
+2. 消息通过士兵传递，士兵被捕，士兵误传消息
+
+**分布式网络中存在类似的问题**
+
+1. 网络中存在恶意节点
+2. 节点之间不能有效的沟通
+
+### 2.1.10 Proof of Work
+
+One of the first algorithms created for consensus is known as **proof of work**. The idea behind **proof of work** is that whoever puts in the most work to contribute to the system is the most trustworthy.
+
+为保证一致性而创建的第一个算法称为工作证明。 工作证明背后的想法是，无论谁投入最多的工作来为系统做出贡献，都是最值得信赖的。
+
+The **basic idea** behind proof of work:
+
+System where information can be costly to produce,but easy to verify.
+
+为了方便实现，有一个**要求**：信息生产成本高，但易于验证的系统。
+
+比特币中工作量证明的**具体做法**是：旷工节点经过竞争计算出一个Nonce值，以保证 **Block Data + Nonce = Hash value**。
+
+To  [Anders.com](https://anders.com/blockchain/block.html),you will go over a demonstration showing how proof of work contributes to the blockchain. 
+
+**Resources**
+
+> [Anders.com](https://anders.com/blockchain/block.html).
+
+> [Bitcoin’s whitepaper on PoW](https://bitcoin.org/bitcoin.pdf)
+
+**Problems with Proof of Work**
+
+1. Extremely High-Energy Consumption
+
+2. A Monopoly of miners leads to concern for Centralization
+
+### 2.1.11 Proof of Stake
 
 
 
