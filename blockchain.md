@@ -167,7 +167,7 @@ A container that holds a list of transactions to be added to the blockchain.
 
 Shared digital ledger that records a list of transactions.
 
-![1562582789285](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1562582789285.png)
+![block](/images/block.png)
 
 #### Block Header
 
@@ -179,7 +179,7 @@ Shared digital ledger that records a list of transactions.
 
 > Nonce
 
-![merkle-tree](D:\git\blockchain\images\merkle-tree.png)
+![merkle-tree](/images/merkle-tree.png)
 
 #### Block Demonstration
 
