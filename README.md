@@ -8,7 +8,7 @@
 
 做一个简单项目，搭建一个私有链。通过这个项目理解区块链数据结构，hash函数在区块链中的作用，区块的生成，区块链的验证，数据持久化等内容。同时学习nodejs编程方法，作为编程的入门项目。
 
-- 项目来源：<https://github.com/0714weijia/private-blockchain> private-blockchain，后面更新到公司服务器
+- 项目来源：在根目录下找到 private-blockchain 项目
 - 项目内容：private blockchain
 - 开发环境：nodejs，levelDB
 - 开发工具：npm，git bash
@@ -38,7 +38,7 @@
 
 学习以太坊开发，了解区块链公链、以太坊架构、智能合约开发，钱包应用。
 
-- 项目来源：[https://github.com/0714weijia/Decentralized-Star-Notary，后面更新到公司服务器](https://github.com/0714weijia/Decentralized-Star-Notary%EF%BC%8C%E5%90%8E%E9%9D%A2%E6%9B%B4%E6%96%B0%E5%88%B0%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8)
+- 项目来源：在根目录下找到 decentralized-star-notary
 - 项目内容：开发ICO智能合约，在以太坊测试网上部署，调用智能合约，合约测试用例
 - 开发环境：以太坊，EVM，nodejs
 - 开发工具：MetaMask，ganache，truffle，remix
@@ -145,3 +145,6 @@ Fabric，电子发票，征信，药品溯源
 - [JavaScript Style Guide and Coding Conventions](https://www.w3schools.com/js/js_conventions.asp)
 - [JavaScript Best Practices](https://www.w3schools.com/js/js_best_practices.asp)
 - [JavaScript style guide, linter, and formatter](https://standardjs.com/) npm 工具
+
+# 根目录下文档介绍
+

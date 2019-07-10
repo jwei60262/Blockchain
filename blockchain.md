@@ -104,62 +104,7 @@ You can follow along with this demonstration at [Anders.com](https://anders.com/
 
 > [Cryptographic Hash Function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
 
-### 2.1.4 Practice Hashing
-
-#### Let's do some Coding Practice
-
-In the previous concept, you learned about Hashing. Now, it is time to see how to code and get the hash using Javascript and Node.js.
-
-#### Steps to follow
-
-> | **Step 1** | Verify `crypto-js` module is installed in your project |
-> | ---------- | ------------------------------------------------------ |
-> | **Step 2** | Import from `crypto-js` module the sha265 library      |
-> | **Step 3** | Add the code to the `generateHash` function            |
-
-Each step you’ll take to complete this exercise is called out in comments throughout the code. You can find more details and guidance about each of these steps in the text provided below the code.
-
-Let’s get started!
-
-#### Step 1. Verify `crypto-js` module is installed in your project
-
-It is always helpful to verify that all the module dependencies for the project are already installed. Navigate to the workspace at the bottom of this page and open your Project folder.
-
-Localize the `package.json` file. This is a `json` file that contains the configuration for your Node.js project. In this file, you can check the dependencies by adding:
-
-```
-"dependencies": {
-    "crypto-js": "^3.1.9-1"
-  }
-```
-
-**Note**: Checkout [this documentation](https://www.npmjs.com/package/crypto-js) to learn more about `crypto-js` modules and how to install them.
-
-Check if everything looks ok and move forward to the next Step.
-
-#### Step 2. Import from `crypto-js` module the sha265 library
-
-Module libraries allow you to use code developed by other people in your own project.
-
-Go to the `crypto-js` [documentation](https://www.npmjs.com/package/crypto-js#usage) and find the piece of code to import the module into your file.
-
-#### Step 3. Add the code to the `generateHash` function
-
-The `generateHash` function will take an object as its parameter, and it will allow us to get a hash from the object we pass into it.
-
-To create this function, use the `SHA256 ()` function from `crypto-js`. The `SHA256 ()` function will receive an object as its parameter and return a hash of that object. The returned value will be logged in the console.
-
-To test your program, just open a new **Terminal** and write: `node hashing.js`. Make sure you're in the Project folder (`cd Project`).
-
-**Tip**: It's always a good option to use `JSON.stringify(obj)`to convert an object to `String` and then use it to generate the hash.
-
-#### How to run your application?
-
-Open the terminal, now you have open a terminal. To be able to execute your code the first thing is to move to the project folder, type in your terminal `cd Project` now you are positioning in the **Project** folder. To run your application type in your terminal the command `node hashing.js`.
-
-**Note**: You can clone the boilerplate code from this [Github Repository](https://github.com/udacity/nd1309_hashing).
-
-### 2.1.5 Blocks
+### 2.1.4 Blocks
 
 Blocks are the fundamental components of the blockchain. The word "block" is an interesting way to think about the information it stores; but what a block is, might be a little different than you expect.
 
@@ -185,7 +130,7 @@ Shared digital ledger that records a list of transactions.
 
 You can follow along with this demonstration at [Anders.com](https://anders.com/blockchain/block.html).
 
-### 2.1.6 Blockchain
+### 2.1.5 Blockchain
 
 Digital ledger that contains the entire history of transactions made on the network.
 
@@ -219,13 +164,13 @@ The answer is interesting. It's stored across a network of users that all have t
 
 答案很有趣。 它存储在一个用户网络中，这些用户都拥有自己的区块链副本。 没有用户拥有这些数据，每个人都可以访问，任何人都可以参与。
 
-### 2.1.7 Distributed Peer-to-Peer Networks
+### 2.1.6 Distributed Peer-to-Peer Networks
 
 The idea of a network is what allows the blockchain to bypass the need for 3rd parties like we discussed earlier.We'll go over how that happens, what the network is, and why it's so important to making an effective blockchain.
 
 We'll break down distributed peer-to-peer networks into a few core ideas. First, we'll define **distributed**, and then we'll define **peer-to-peer**. Finally, putting these ideas together helps you see how powerful this combination can be. Then we'll go over how this network helps support the entire system behind the blockchain.
 
-#### Key Terms
+**Key Terms**
 
 > **Peer-to-Peer Network:** A network of computers that allows information to be shared across users.
 
@@ -249,7 +194,7 @@ Distributed Peer-to-Peer区块链网络：
 
 ![distributed-p2p-network](/images/distributed-p2p-network.png)
 
-### 2.1.8 Memory Pool
+### 2.1.7 Memory Pool
 
 Before getting onto the blockchain or becoming part of the network, transactions go into what is known as the memory pool.
 
@@ -272,7 +217,7 @@ Waiting place for all unconfirmed transactions before they are added to the bloc
 
 > [Bitcoin Visuals](https://bitcoinvisuals.com/stats) - Another fun site to check bitcoin stats (e.g. fees, mempool, block speed, and hashrate)
 
-### 2.1.9 Consensus
+### 2.1.8 Consensus
 
 **Consensus:**
 
@@ -301,7 +246,7 @@ Byzantine Generals Problem:
 1. 网络中存在恶意节点
 2. 节点之间不能有效的沟通
 
-### 2.1.10 Proof of Work
+### 2.1.9 Proof of Work
 
 One of the first algorithms created for consensus is known as **proof of work**. The idea behind **proof of work** is that whoever puts in the most work to contribute to the system is the most trustworthy.
 
@@ -331,7 +276,7 @@ To  [Anders.com](https://anders.com/blockchain/block.html),you will go over a de
 
 2. A Monopoly of miners leads to concern for Centralization
 
-### 2.1.11 Proof of Stake
+### 2.1.10 Proof of Stake
 
 There are no miners, There are validators--stakeholders. 
 
@@ -378,7 +323,7 @@ Also check out Ethereum's Proof of Stake FAQ which provides more details around 
 
 > [Ethereum’s Proof of Stake FAQs](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQs)
 
-### 2.1.12 Other Consensus Algorithms
+### 2.1.11 Other Consensus Algorithms
 
 **Proof of Work**
 
