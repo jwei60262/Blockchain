@@ -1,7 +1,3 @@
----
-typora-root-url: ./
----
-
 # 1 Blockchain Overview
 
 ## 1.1 What Is The Blockchain?
@@ -290,12 +286,15 @@ Consensus is how the blockchain makes decisions. Basically **consensus** is an i
 
 共识是区块链如何做出决策。 基本上**共识**是一个想法，但这个想法是通过许多不同的算法实现的。这些算法都是尝试更有效地达成共识的不同方法。像**工作证明**，**证明**和** DBFT **这些都是我们将很快讨论的共识算法。
 
+Byzantine Generals Problem:
+
 ![byzantine-generals-problem](/images/byzantine-generals-problem.png)
 
 **Byzantine Generals Problem**
 
 1. 将军中间有叛徒
 2. 消息通过士兵传递，士兵被捕，士兵误传消息
+3. 拜占庭将军问题也有不同的版本，假设通信信道是安全的，有恶意节点——拜占庭节点——存在
 
 **分布式网络中存在类似的问题**
 
@@ -306,7 +305,7 @@ Consensus is how the blockchain makes decisions. Basically **consensus** is an i
 
 One of the first algorithms created for consensus is known as **proof of work**. The idea behind **proof of work** is that whoever puts in the most work to contribute to the system is the most trustworthy.
 
-为保证一致性而创建的第一个算法称为工作证明。 工作证明背后的想法是，无论谁投入最多的工作来为系统做出贡献，都是最值得信赖的。
+为保证一致性而创建的第一个算法称为工作证明。 工作证明**背后的想法**是，无论谁投入最多的工作来为系统做出贡献，都是最值得信赖的。
 
 The **basic idea** behind proof of work:
 
@@ -323,6 +322,8 @@ To  [Anders.com](https://anders.com/blockchain/block.html),you will go over a de
 > [Anders.com](https://anders.com/blockchain/block.html).
 
 > [Bitcoin’s whitepaper on PoW](https://bitcoin.org/bitcoin.pdf)
+>
+> [比特币节点](https://zhuanlan.zhihu.com/p/56100510)
 
 **Problems with Proof of Work**
 
@@ -332,7 +333,87 @@ To  [Anders.com](https://anders.com/blockchain/block.html),you will go over a de
 
 ### 2.1.11 Proof of Stake
 
+There are no miners, There are validators--stakeholders. 
 
+Proof of Stake (PoS) is a category of consensus algorithms for public blockchains that depend on a validator's economic stake in the network. In PoS-based public blockchains (e.g. Ethereum's upcoming Casper implementation), a set of validators take turns proposing and voting on the next block, and the weight of each validator's vote depends on the size of its deposit (i.e. stake). Significant advantages of PoS include security, reduced risk of centralization, and energy efficiency.
+
+股权证明（PoS）是公共区块链的一类共识算法，它依赖于validator在网络中的经济利益。在基于PoS的公共区块链（例如以太坊即将发布的Casper实现）中，一组validator轮流提议并对下一个块进行投票，并且每个验证器的投票权重取决于其存款的大小（即投注）。PoS的显著优势包括安全性，降低集中风险和能源效率。
+
+In general, a proof of stake algorithm looks as follows. The blockchain keeps track of a set of validators, and anyone who holds the blockchain's base cryptocurrency (in Ethereum's case, ether) can become a validator by sending a special type of transaction that locks up their ether into a deposit. The process of creating and agreeing to new blocks is then done through a consensus algorithm that all current validators can participate in.
+
+通常，权益证明如下。区块链跟踪一组validator，任何持有区块链基本加密货币的人（在以太坊上是以太币）都可以通过发送特殊类型的交易将其以太币锁定到存款中，从而成为validator。然后，通过所有当前validator都可以参与的一致性算法来完成创建和同意新块的过程。
+
+In chain-based proof of stake, the algorithm pseudo-randomly selects a validator during each time slot (e.g. every period of 10 seconds might be a time slot), and assigns that validator the right to create a single block, and this block must point to some previous block (normally the block at the end of the previously longest chain), and so over time most blocks converge into a single constantly growing chain.
+
+在基于链的证明中，算法在每个时隙中伪随机选择一个验证器（例如，每个10秒的周期可能是一个时隙），并为该validator分配创建单个块的权限，并且该块必须指向前一个块（通常是前一个最长链末端的块），因此随着时间的推移，大多数块会聚成一个不断增长的链。
+
+**Proof of Stake共识过程：**
+
+> 1. 广播交易
+> 2. 节点发出一个特殊交易锁存基本币，这个过程相当于为下一个区块投注。通过这个行为节点成为validator
+> 3. 算法在每个时隙中伪随机选择一个验证器validator，validator获得权限，创建区块。选择validator的过程依赖validator的投注（投注 = 币龄 = 币量 * 币持有时间）。
+> 4. 验证节点验证区块。验证通过之后validator获得回报。
+> 5. 区块最终入链
+
+**Resources**
+
+下面几种区块链平台采用了 Proof of Stake。
+
+> [Ethereum](https://ethereum.org/)
+>
+> - Switching from PoW to PoS in the Casper Project
+
+> [Dash](https://www.dash.org/) 
+>
+> - A Pioneer of PoS
+> - Built form the core Bitcoin platform with added features for privacy and Tx speed
+
+> [Lisk](https://lisk.io/) 
+>
+> - Focused on creating Decentralized Apps
+> - Uses Delegated Proof of Stake
+> - **Delegated Proof of Stake**: Only the top 101 delegates can have stakes int the network and these delegates are voted on a rolling basis by the community.
+
+Also check out Ethereum's Proof of Stake FAQ which provides more details around some of the concepts covered here:
+
+> [Ethereum’s Proof of Stake FAQs](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQs)
+
+### 2.1.12 Other Consensus Algorithms
+
+**Proof of Work**
+
+> [Bitcoin’s whitepaper on PoW](https://bitcoin.org/bitcoin.pdf)
+
+**Proof of Stake**
+
+> [Ethereum’s Proof of Stake FAQs](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ)
+>
+> - Block Selection methods
+>   - Randomized block selection
+>   - Coin age-based selection
+> - [Alternative Proof of Stake Methods](https://dailyfintech.com/2016/01/20/why-proof-of-stake-matters-for-blockchain/#content-wrapper)
+>   - Transparent Forging
+>   - Delegated Proof of Stake
+
+**Delegated Byzantine Fault Tolerance**
+
+> - [NEO's Consensus Protocol](https://steemit.com/neo/@basiccrypto/neo-s-consensus-protocol-how-delegated-byzantine-fault-tolerance-works)
+
+**Practical Byzantine Fault Tolerance**
+
+> - [FISCO-BCOS](https://github.com/FISCO-BCOS)
+
+**RAFT**
+
+> - [FISCO-BCOS](https://github.com/FISCO-BCOS)
+
+**Proof Of Activity**
+
+> - [Proof of Activity Explained: A Hybrid Consensus Algorithm](https://www.coinbureau.com/blockchain/proof-of-activity-explained-hybrid-consensus-algorithm/)
+
+**Proof Of Burn**
+
+> - [What is Proof of Burn?](https://99bitcoins.com/what-is-proof-of-burn/)
 
 ## 2.2 Blockchain Transactions
 
