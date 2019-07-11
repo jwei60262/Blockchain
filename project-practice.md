@@ -9,4 +9,5 @@
 7. practice-block 是一个不完整的项目，完成此项目，将代码提交至 Gitlab 代码库；
 8. 在根目录下找到 private-blockchain 项目，在虚拟机上创建 gitlab 代码库，将此项目传入 Gitlab 代码库；
 9. private-blockchain 是一个不完整的项目，完成此项目，将代码提交至 Gitlab 代码库；
+10. 在centOS上部署BCOS节点，编写智能合约，部署到链上，写java DAPP调用合约。
 
