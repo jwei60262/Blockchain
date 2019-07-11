@@ -32,7 +32,7 @@ The blockchain has the potential to revolutionize industries like finance, gover
 
 ![blockchain-with-hash](/images/blockchain-with-hash.png)
 
-# 2 Blockchain Identity
+# 2 Blockchain Framework
 
 ## 2.1 Blockchain Basics
 
@@ -362,7 +362,17 @@ Also check out Ethereum's Proof of Stake FAQ which provides more details around 
 
 ## 2.2 Blockchain Transactions
 
-Identify various wallet types, private/public key generation between non-deterministic, sequential deterministic, and hierarchical deterministic wallets.
+### 2.2.1 Blockchain Identity
+
+**Wallet Address**: A unique identifier for your wallet
+
+**Private Key**: A secret number that allows you to spend bitcoin from your wallet
+
+**Public Key**: Publicly shareable key that cannot be used to spend bitcoin
+
+
+
+
 
 ## 2.3 Verify Message Signature
 
