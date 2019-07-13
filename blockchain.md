@@ -1,3 +1,8 @@
+---
+
+typora-root-url: ./
+---
+
 # 1 Blockchain Overview
 
 ## 1.1 What Is The Blockchain?
@@ -76,9 +81,11 @@ Once you can grasp these core ideas of bitcoin you’ll be able to apply them an
 
 **Resources**
 
-> Read: [How to Time-Stamp a Digital Document](https://www.anf.es/pdf/Haber_Stornetta.pdf)
+> [How to Time-Stamp a Digital Document](https://www.anf.es/pdf/Haber_Stornetta.pdf)
 
-> Read: [Bitcoin: A Peer to Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
+> [Bitcoin: A Peer to Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
+
+> [bitcoin.org](https://bitcoin.org/en/)
 
 ### 2.1.3 Hashing
 
@@ -364,13 +371,56 @@ Also check out Ethereum's Proof of Stake FAQ which provides more details around 
 
 ### 2.2.1 Blockchain Identity
 
+币的拥有者可以花费币，交易不被追溯
+
+通过钱包进行身份管理，身份包含下面三个内容
+
 **Wallet Address**: A unique identifier for your wallet
 
-**Private Key**: A secret number that allows you to spend bitcoin from your wallet
+**Private Key**: A secret number that allows you to spend bitcoin from your wallet. These are randomly generated numbers that your wallet creates
 
 **Public Key**: Publicly shareable key that cannot be used to spend bitcoin
 
+Wallets can contain one or mare of  these private keys and these should not be shared with anyone.
 
+私钥是一组随机数，以这种方式产生的钱包是“不确定性钱包”。
+
+椭圆曲线数字签名算法Elliptic Curve Digital Signature Algorithm，生成公钥
+
+![generate-pub-with-ecdsa](/images/generate-pub-with-ecdsa.png)
+
+公钥几乎不能推断出私钥，至少难度非常大
+
+![private-pub-key](/images/private-pub-key.png)
+
+通过公钥生成钱包地址
+
+![generate-address](/images/generate-address.png)
+
+钱包地址不能推断出公钥。
+
+![pub-address-key](/images/pub-address-key.png)
+
+每一笔交易中都包含了一个转账地址
+
+![wallet-address](/images/wallet-address.png)
+
+### 2.2.2 Wallet
+
+**Non-deterministic Wallet**: (random wallets) A wallet where private keys are generated from random numbers.
+
+**Deterministic Wallet**: A wallet where addresses, private keys, and public keys can be traced back to their original seed words.
+
+**Hierarchical Deterministic Wallet**: An advanced type of deterministic wallet that contains keys derived in a tree structure.
+
+| Wallet Type                   | Non-Deterministic Wallet                                     | Sequential Deterministic Wallet                              | Hierarchical Deterministic Wallet                            |
+| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Description                   | These wallets are simply collections of randomly generated private keys. | These wallets contain private keys that are derived sequentially from a single seed and can be traced back to that seed. | These wallets contain keys derived in a tree structure, such that a parent key derives children keys, children keys derive grandchildren keys and so on to an infinite depth. |
+| How to get a new private key? | Private key = randomly generated between 1 and 2 ^256        | Private key = sha256(seed + n)， where seed = 128 purely random bits | Private key = sha256(address(publicKey(seed) + n))           |
+
+[比特币钱包是什么](https://zhuanlan.zhihu.com/p/32822703)
+
+[区块链钱包分类](https://cloud.tencent.com/developer/article/1192508)
 
 
 

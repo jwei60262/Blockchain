@@ -7,3 +7,4 @@ To use this boilerplate code locally follow this steps:
 3. Run `npm install` to install the dependencies.
 4. Implement your code.
 5. Use `node app.js` to run the application.
+
