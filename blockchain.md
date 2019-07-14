@@ -1,8 +1,3 @@
----
-
-typora-root-url: ./
----
-
 # 1 Blockchain Overview
 
 ## 1.1 What Is The Blockchain?
@@ -401,7 +396,7 @@ Wallets can contain one or mare of  these private keys and these should not be s
 
 ![pub-address-key](/images/pub-address-key.png)
 
-每一笔交易中都包含了一个转账地址
+每一笔交易中都包含了一个转账地址，参考 https://live.blockcypher.com/
 
 ![wallet-address](/images/wallet-address.png)
 
@@ -418,9 +413,26 @@ Wallets can contain one or mare of  these private keys and these should not be s
 | Description                   | These wallets are simply collections of randomly generated private keys. | These wallets contain private keys that are derived sequentially from a single seed and can be traced back to that seed. | These wallets contain keys derived in a tree structure, such that a parent key derives children keys, children keys derive grandchildren keys and so on to an infinite depth. |
 | How to get a new private key? | Private key = randomly generated between 1 and 2 ^256        | Private key = sha256(seed + n)， where seed = 128 purely random bits | Private key = sha256(address(publicKey(seed) + n))           |
 
-[比特币钱包是什么](https://zhuanlan.zhihu.com/p/32822703)
+**Proof Of Burn**
 
-[区块链钱包分类](https://cloud.tencent.com/developer/article/1192508)
+> - [比特币钱包是什么](https://zhuanlan.zhihu.com/p/32822703)
+> - [区块链钱包分类](https://cloud.tencent.com/developer/article/1192508)
+> - [Address_reuse](https://en.bitcoin.it/wiki/Address_reuse)
+> - [为什么比特币要使用地址](https://zhuanlan.zhihu.com/p/28196364)
+> - [为什么使用地址而不是公钥](https://haoduoshipin.com/videos/357/)
+> - [比特币如何验证交易](https://zhuanlan.zhihu.com/p/24838810)
+
+分别看一下每一种钱包：
+
+Non-deterministic Wallet
+
+![non-deterministic](/images/non-deterministic.png)
+
+生成私钥的过程
+
+![non-deterministic-key-process](/images/non-deterministic-key-process.png)
+
+
 
 
 
