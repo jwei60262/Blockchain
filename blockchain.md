@@ -1,3 +1,7 @@
+---
+typora-root-url: ./
+---
+
 # 1 Blockchain Overview
 
 ## 1.1 What Is The Blockchain?
@@ -349,10 +353,12 @@ Also check out Ethereum's Proof of Stake FAQ which provides more details around 
 **Practical Byzantine Fault Tolerance**
 
 > - [FISCO-BCOS](https://github.com/FISCO-BCOS)
+> - [BCOS共识算法](https://fisco-bcos-documentation.readthedocs.io/zh_CN/latest/docs/design/consensus/index.html)
 
 **RAFT**
 
 > - [FISCO-BCOS](https://github.com/FISCO-BCOS)
+> - [BCOS共识算法](https://fisco-bcos-documentation.readthedocs.io/zh_CN/latest/docs/design/consensus/index.html)
 
 **Proof Of Activity**
 
@@ -408,33 +414,94 @@ Wallets can contain one or mare of  these private keys and these should not be s
 
 **Hierarchical Deterministic Wallet**: An advanced type of deterministic wallet that contains keys derived in a tree structure.
 
+**非确定性钱包**（nondeterministic wallet）：每个密钥都是从随机数独立生成，密钥彼此之间无关联，这种钱包也被称为“Just a Bunch Of Keys（一堆密钥）”，简称JBOK钱包。
+
+**确定性钱包（deterministic wallet）**：所有密钥都是从一个主密钥派生出来，这个密钥即为种子（Seed）。该类型钱包中所有密钥都相互关联，通过原始种子可以找到所有密钥。确定性钱包中使用了很多不同的密钥推导方法，最常用的是使用树状结构，称为分级确定性钱包或者HD (hierarchical deterministic)钱包。
+
 | Wallet Type                   | Non-Deterministic Wallet                                     | Sequential Deterministic Wallet                              | Hierarchical Deterministic Wallet                            |
 | ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Description                   | These wallets are simply collections of randomly generated private keys. | These wallets contain private keys that are derived sequentially from a single seed and can be traced back to that seed. | These wallets contain keys derived in a tree structure, such that a parent key derives children keys, children keys derive grandchildren keys and so on to an infinite depth. |
 | How to get a new private key? | Private key = randomly generated between 1 and 2 ^256        | Private key = sha256(seed + n)， where seed = 128 purely random bits | Private key = sha256(address(publicKey(seed) + n))           |
 
-**Proof Of Burn**
+分别看一下每一种钱包：
 
+**Non-deterministic Wallet**
+
+------
+
+这种钱包的多个私钥之间没有联系，备份比较麻烦
+
+![non-deterministic](/images/non-deterministic.png)
+
+生成私钥的过程，一种可能的实践是，每次交易生成一个新的钱包地址。生成的钱包地址多，每次需要备份私钥。
+
+![non-deterministic-key-process](/images/non-deterministic-key-process.png)
+
+**Sequential Deterministic Wallet**
+
+------
+
+私钥为一串无规律字符串，不便于记忆，不方便使用，从设计的角度，就出现了助记词
+
+随机数生成种子（seed），种子转化为一串助记词（Mnemonic），再生成主私钥，依次生成新的私钥，最后生成钱包地址
+
+![sequential-deterministic-wallet](/images/sequential-deterministic-wallet.png)
+
+在生成私钥时用序号作为输入参数，所以叫顺序确定性钱包
+
+种子钱包的私钥之间有关联，有了种子seed，就可以恢复所有的私钥，便于备份，可以很方便在多个钱包之间迁移
+
+**Hierarchical Deterministic Wallet (HD Wallet)**
+
+------
+
+HD Wallet基于BIP-32
+
+密钥的生成过程是一个树状结构，主私钥可以生成子孙私钥，以至无穷，主公钥也如此。生成子公钥的时候，不需要私钥在场
+
+![hd-wallet](/images/hd-wallet.png)
+
+密钥的树状结构对应组织机构。HD Wallet在一个组织机构中可以全部或者部分分享，比如可以向一个下层组织分享对应层级的公私钥对及钱包地址，这种情况下，这个组织就有花钱的能力。再比如只向下层组织分享对应的钱包地址，这种情况下，组织只能收钱，不能花钱。任何情况下上层组织都可以监控钱包状况。
+
+![hd-wallet-sharing](/images/hd-wallet-sharing.png)
+
+**Key store**
+
+用户不习惯区块链钱包的使用方式，更熟悉现有的密码操作方式。针对此，有的钱包提供了keystore，让用户导出密钥文件，Keystore会存储在使用的设备里，这样每次登录只用输入相应密码即可。Keystore是私钥经过加密过后的一个文件，需要用户密码才能打开。即使keystore文件被盗，只要用户设置的密码够长够随机，短时间内私钥也不会泄露，有充足的时间转移地址里的数字资产。
+
+**Get a wallet for yourself**
+
+A good way to get started is just to google ‘bitcoin wallets’ and start looking around.
+
+**Electrum**: We’re using electrum for a few reasons. It works on almost any computer. It’s fast and lightweight. And it includes all the functionality we’ll need.
+
+[Getting started with Electrum](https://www.youtube.com/watch?v=WdVlH9N2oKU)
+
+钱包的作用？
+
+钱包的通信方式，RPC？
+
+**参考资料**
+
+> - https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
+> - https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki
+> - https://github.com/bitcoin/bips/blob/master/bip-0043.mediawiki
+> - https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki
 > - [比特币钱包是什么](https://zhuanlan.zhihu.com/p/32822703)
+> - [HD Wallet 剖析](https://www.arcblock.io/zh/post/2018/12/01/hd-wallets-design-and-implementation)
 > - [区块链钱包分类](https://cloud.tencent.com/developer/article/1192508)
 > - [Address_reuse](https://en.bitcoin.it/wiki/Address_reuse)
 > - [为什么比特币要使用地址](https://zhuanlan.zhihu.com/p/28196364)
 > - [为什么使用地址而不是公钥](https://haoduoshipin.com/videos/357/)
 > - [比特币如何验证交易](https://zhuanlan.zhihu.com/p/24838810)
 
-分别看一下每一种钱包：
+### 2.2.3 Private keys
 
-Non-deterministic Wallet
+### 2.2.4 Transaction
 
-![non-deterministic](/images/non-deterministic.png)
+**Sign a Transaction**
 
-生成私钥的过程
-
-![non-deterministic-key-process](/images/non-deterministic-key-process.png)
-
-
-
-
+**Transaction Lifecycle**
 
 ## 2.3 Verify Message Signature
 
