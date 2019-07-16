@@ -1,7 +1,3 @@
----
-typora-root-url: ./
----
-
 # 1 Blockchain Overview
 
 ## 1.1 What Is The Blockchain?
@@ -487,8 +483,6 @@ HD Wallet基于BIP-32
 > - [为什么使用地址而不是公钥](https://haoduoshipin.com/videos/357/)
 > - [比特币如何验证交易](https://zhuanlan.zhihu.com/p/24838810)
 
-
-
 ### 2.2.3 Wallet App
 
 A good way to get started is just to google ‘bitcoin wallets’ and start looking around.
@@ -507,9 +501,39 @@ A good way to get started is just to google ‘bitcoin wallets’ and start look
 
 **SSH**
 
+使用putty或xshell登陆远程服务器。
+
 **HTTPS**
 
 SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Transport Layer Security，TLS）是为网络通信提供安全及数据完整性的一种安全协议。TLS与SSL在传输层对网络连接进行加密。
+
+### 2.2.5 DID
+
+这一部分提到区块链身份的内容了，加一节DID的介绍，与Blockchain Identity对照学习。
+
+**微软**
+
+- [Decentralized digital identities and blockchain: The future as we see it](https://www.microsoft.com/en-us/microsoft-365/blog/2018/02/12/decentralized-digital-identities-and-blockchain-the-future-as-we-see-it/)
+- [A new approach to digital IDENTITY](https://didproject.azurewebsites.net/)
+- [Decentralized identity APIs](https://didproject.azurewebsites.net/docs/overview.html)
+- [ion](https://github.com/decentralized-identity/ion)
+- [DIF](https://identity.foundation/)
+
+**w3c**
+
+- [Decentralized Identifiers (DIDs) v0.13](https://w3c-ccg.github.io/did-spec/)
+
+**微众**
+
+- [WeIdentity](https://github.com/WeBankFinTech/WeIdentity)
+- [WeIdentity use-cases](https://weidentity.readthedocs.io/zh_CN/master/docs/use-cases.html)
+- [WeIdentity 规范文档](https://weidentity.readthedocs.io/zh_CN/master/docs/weidentity-spec.html)
+
+**公链身份DID**
+
+- ERC-725
+- uPort
+- Sovrin
 
 ### 2.2.5 Transaction
 
