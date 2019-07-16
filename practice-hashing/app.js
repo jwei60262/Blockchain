@@ -1,5 +1,5 @@
 /**
- * Step 1: Verify 'crypto-js' module is installed for your project
+ * Step 1: Using npm list <library name> to verify 'crypto-js' module is installed for your project
  * After verifying it is installed, move on to Step 2. No code needs to be written here.
  */
 

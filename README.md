@@ -6,6 +6,7 @@
 5. practice-hashing目录是hash练习的代码模板
 6. recap-of-achieving-consensus.md是几种共识算法的总结
 7. restoring-bc-identity.md是身份恢复的介绍
+8. software-development.md是软件开发的一些心得 
 
 # 培训交流
 

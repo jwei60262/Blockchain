@@ -1,7 +1,3 @@
----
-typora-root-url: ./
----
-
 # 1 Blockchain Overview
 
 ## 1.1 What Is The Blockchain?
@@ -36,7 +32,7 @@ The blockchain has the potential to revolutionize industries like finance, gover
 
 ![blockchain-with-hash](/images/blockchain-with-hash.png)
 
-# 2 Blockchain Framework
+# 2 Blockchain Components
 
 ## 2.1 Blockchain Basics
 
@@ -552,6 +548,10 @@ We’re using electrum for a few reasons. It works on almost any computer. It’
 
 Entropy: Lack of order or predictability. The degree of disorder or randomness in the system.
 
+**扔硬币**
+
+仍256次硬币，记录每一次的结果，将结果的组合作为私钥值。
+
 **website**
 
 这个网站 [https://www.bitaddress.org](https://www.bitaddress.org/) 利用底层操作系统的随机数生成器，生成私钥和地址。建议离线状态时获取私钥，可以先把网页存到本地，然后断网，打开本地网页。
@@ -574,19 +574,106 @@ SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Trans
 
 **Sign a Transaction**
 
+用钱包签名交易，然后向全网广播交易。签名可以证明自己的所有者身份。
+
+Transaction inputs：支付款
+
+Transaction outputs：接收款
+
+Unspent transaction output known as UTXO。
+
+查看链接 https://live.blockcypher.com/ 理解UTXO。
+
+只有UTXO可作为下一个交易的input。
+
 **Transaction Lifecycle**
 
-https://zhuanlan.zhihu.com/p/24838810
+1. 获得对方地址
+2. 产生一个交易
+3. 用私钥对交易签名
+4. 交易在全网广播，进入memory pool
+5. 矿工接受交易，将交易打包到区块
+6. 矿工为区块计算hash，完成工作量证明
+7. 其它节点验证区块，区块上链
+8. 转账交易完成
 
-## 2.3 Verify Message Signature
+交易验证的脚本参考：https://zhuanlan.zhihu.com/p/24838810
+
+## 2.3 Message Signature
+
+### 2.3.1 Generate Key Pair and a Wallet Address
+
+下面几种方式都可以生成key和address。
+
+[bitaddress](https://www.bitaddress.org)
+
+[Electrum](https://electrum.org/#home)
+
+MetaMask
+
+### 2.3.2 Sign a Message
+
+通过签名算法(signing algorithm)签名
+
+使用签名的好处
+
+- Authentication - A valid digital signature proves to the recipient, that the message was sent by a known sender.
+- Integrity - The recipient and sender can prove the message was not altered in transmission.
+- Non-repudiation - The Sender cannot deny sending the message.
+
+### 2.3.3 Verify a Message
+
+传入Wallet Address, the *Signature*, and a Message到验证算法，进行验证。
+
+在nodejs环境下打开node session，运行以下代码。
+
+```javascript
+const bitcoinMessage = require('bitcoinjs-message')
+
+const address = '1HZwkjkeaoZfTSaJxDw6aKkxp45agDiEzN'
+const signature = 'HJLQlDWLyb1Ef8bQKEISzFbDAKctIlaqOpGbrk3YVtRsjmC61lpE5ErkPRUFtDKtx98vHFGUWlFhsh3DiW6N0rE'
+const message = 'This is an example of a signed message.'
+console.log(bitcoinMessage.verify(message,address,signature));
+```
+
+### 2.3.4 Sign and Verify
+
+![sign-verify](/images/sign-verify.png)
 
 Use Bitcoin Javascript Libraries to sign and verify messages that authenticate transactions
 
-## 2.4 Manage Your Blockchain Identity
+Figure out which signatures pass verification and which ones fail verification using the Bitcoin Javascript Library [bitcoinjs-message](https://github.com/bitcoinjs/bitcoinjs-message).
 
-Learn to create your identity on the Blockchain and interact with an existing web service.
+[Segwit ](https://zhuanlan.zhihu.com/p/32613487)就是把脚本签名(scriptSig)信息从基本结构 (base block) 里拿出来，放在一个新的数据结构当中。做验证工作的节点和矿工**也会验证这个新的数据结构里**的脚本签名，以确保交易是有效的。
 
 # 3 Blockchain Data
+
+### 3.1.1 Data
+
+### 3.1.2 Bitcoin Core
+
+### 3.1.3 Public and Private Blockchain
+
+**Difference**
+
+|                       | Public Blockchain | Private Blockchain |
+| --------------------- | ----------------- | ------------------ |
+| Permissions           | Permissionless    | Permissioned       |
+| Scalability           | More Difficult    | Simpler            |
+| Vulnerability         | Less Vulnerable   | More Vulnerable    |
+| Regulatory Compliance | More Difficult    | Simpler            |
+
+去中心化的公链难以监管。
+
+**Public and private blockchain communication**
+
+链与链之间的交互可以产生跨链（cross chain）操作，跨链操作让不同协议的区块链网络和谐交互，为分布式应用留下了想象空间。跨链、多链的内容可以参考：https://zh.wikipedia.org/zh-hans/Polkadot
+
+看下面的截图，私链监听公链，当公链上新区块产生的时候，将交易的哈希值存入私链。也可以将私有链的哈希值存入公链。
+
+![public-private-blockchain-link](/images/public-private-blockchain-link.png)
+
+
 
 # 4 Blockchain Web Services
 
