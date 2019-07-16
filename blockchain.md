@@ -1,3 +1,7 @@
+---
+typora-root-url: ./
+---
+
 # 1 Blockchain Overview
 
 ## 1.1 What Is The Blockchain?
@@ -469,6 +473,10 @@ HD Wallet基于BIP-32
 
 钱包的通信方式，RPC？
 
+**Restore your Wallet Identity**
+
+参考 restoring-bc-identity.md 文档
+
 **参考资料**
 
 > - https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki
@@ -487,17 +495,70 @@ HD Wallet基于BIP-32
 
 A good way to get started is just to google ‘bitcoin wallets’ and start looking around.
 
-**Electrum**: We’re using electrum for a few reasons. It works on almost any computer. It’s fast and lightweight. And it includes all the functionality we’ll need.
+**Electrum**
 
-[Getting started with Electrum](https://www.youtube.com/watch?v=WdVlH9N2oKU)
+We’re using electrum for a few reasons. It works on almost any computer. It’s fast and lightweight. And it includes all the functionality we’ll need.
+
+下载地址：https://electrum.org/#home
+
+安装视频：[Getting started with Electrum](https://www.youtube.com/watch?v=WdVlH9N2oKU)
 
 **MetaMask**
 
+安装浏览器插件MetaMask，Google和Firefox都支持这个插件。
+
+![metamask](/images/metamask.png)
+
 **Ganache**
 
-转账
+安装Ganache
 
-### 2.2.4 Private Keys
+1. 安装包安装，下载地址：https://www.trufflesuite.com/ganache
+
+2. 命令行安装，先装nodejs，然后使用npm install -g ganache-cli安装
+
+中文网：https://truffleframework.org/docs/ganache/using#-
+
+**MetaMask + Ganache演示**
+
+1. 安装Ganache，启动Ganache，确保 RPC server 地址是 HTTP://127.0.0.1:8545；
+2. 打开MetaMask，切换到本地网络——Localhost 8545；
+3. 在MetaMask中导入Ganache钱包地址，查看变化；
+4. 尝试转账，查看变化。
+
+### 2.2.4 Public Key Infrastructure
+
+**Private Keys**
+
+1. 私钥目的
+2. 私钥的安全性
+3. 生成私钥的方式
+
+私钥：1 —— 2^256，256-bits random number
+
+地球上的沙子：2^63
+
+私钥的表现形式：
+
+1. Hex(Hexadecimal)
+2. WIF(Base58Check)
+3. WIF-Compressed(Base58Check added suffix 0x01 before encoding)
+
+私钥的生成：
+
+1. 不要自己轻易生成随机数
+2. 密码学专家经过长期的工作，会产生一个牢不可破的随机数生成器。
+3. Most operating systems have a source of entropy or a library with a cryptographically secure number generator.
+
+Entropy: Lack of order or predictability. The degree of disorder or randomness in the system.
+
+**website**
+
+这个网站 [https://www.bitaddress.org](https://www.bitaddress.org/) 利用底层操作系统的随机数生成器，生成私钥和地址。建议离线状态时获取私钥，可以先把网页存到本地，然后断网，打开本地网页。
+
+**Electrum**
+
+钱包可以生成私钥和地址。
 
 **SSH**
 
@@ -507,9 +568,35 @@ A good way to get started is just to google ‘bitcoin wallets’ and start look
 
 SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Transport Layer Security，TLS）是为网络通信提供安全及数据完整性的一种安全协议。TLS与SSL在传输层对网络连接进行加密。
 
-### 2.2.5 DID
+参考 https://www.cnblogs.com/franson-2016/p/5530671.html
 
-这一部分提到区块链身份的内容了，加一节DID的介绍，与Blockchain Identity对照学习。
+### 2.2.5 Transaction
+
+**Sign a Transaction**
+
+**Transaction Lifecycle**
+
+https://zhuanlan.zhihu.com/p/24838810
+
+## 2.3 Verify Message Signature
+
+Use Bitcoin Javascript Libraries to sign and verify messages that authenticate transactions
+
+## 2.4 Manage Your Blockchain Identity
+
+Learn to create your identity on the Blockchain and interact with an existing web service.
+
+# 3 Blockchain Data
+
+# 4 Blockchain Web Services
+
+# 5 Identity and Smart Contracts
+
+## 5.1 Solidity
+
+# 6 DID
+
+分布式身份管理
 
 **微软**
 
@@ -535,26 +622,3 @@ SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Trans
 - uPort
 - Sovrin
 
-### 2.2.5 Transaction
-
-**Sign a Transaction**
-
-**Transaction Lifecycle**
-
-https://zhuanlan.zhihu.com/p/24838810
-
-## 2.3 Verify Message Signature
-
-Use Bitcoin Javascript Libraries to sign and verify messages that authenticate transactions
-
-## 2.4 Manage Your Blockchain Identity
-
-Learn to create your identity on the Blockchain and interact with an existing web service.
-
-# 3 Blockchain Data
-
-# 4 Blockchain Web Services
-
-# 5 Identity and Smart Contracts
-
-## 5.1 Solidity

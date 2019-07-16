@@ -8,3 +8,4 @@ To use this boilerplate code locally follow this steps:
 4. Implement your code.
 5. Use `node app.js` to run the application.
 
+practice-hashing.md是hash练习的说明文档

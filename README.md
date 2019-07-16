@@ -1,10 +1,11 @@
 # 根目录下文档介绍
-1. 本文档介绍培训交流的项目、内容、一些常用工具和代码规范。
-2. blockchain.md是区块链文档，介绍区块链的基本知识。
-3. project-practice.md是动手练习文档，练习的步骤说明。
-4. practice-block.md是区块练习的说明文档，practice-block目录是区块练习的代码模板。
-5. practice-hashing.md是hash练习的说明文档，practice-hashing目录是hash练习的代码模板。
-6. recap-of-achieving-consensus.md是几种共识算法的总结。
+1. 本文档介绍培训交流的项目、内容、一些常用工具和代码规范
+2. blockchain.md是区块链文档，介绍区块链的基本知识
+3. project-practice.md是动手练习文档，练习的步骤说明
+4. practice-block目录是区块练习的代码模板
+5. practice-hashing目录是hash练习的代码模板
+6. recap-of-achieving-consensus.md是几种共识算法的总结
+7. restoring-bc-identity.md是身份恢复的介绍
 
 # 培训交流
 
