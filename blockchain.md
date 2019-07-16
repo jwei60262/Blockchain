@@ -469,14 +469,6 @@ HD Wallet基于BIP-32
 
 用户不习惯区块链钱包的使用方式，更熟悉现有的密码操作方式。针对此，有的钱包提供了keystore，让用户导出密钥文件，Keystore会存储在使用的设备里，这样每次登录只用输入相应密码即可。Keystore是私钥经过加密过后的一个文件，需要用户密码才能打开。即使keystore文件被盗，只要用户设置的密码够长够随机，短时间内私钥也不会泄露，有充足的时间转移地址里的数字资产。
 
-**Get a wallet for yourself**
-
-A good way to get started is just to google ‘bitcoin wallets’ and start looking around.
-
-**Electrum**: We’re using electrum for a few reasons. It works on almost any computer. It’s fast and lightweight. And it includes all the functionality we’ll need.
-
-[Getting started with Electrum](https://www.youtube.com/watch?v=WdVlH9N2oKU)
-
 钱包的作用？
 
 钱包的通信方式，RPC？
@@ -495,13 +487,37 @@ A good way to get started is just to google ‘bitcoin wallets’ and start look
 > - [为什么使用地址而不是公钥](https://haoduoshipin.com/videos/357/)
 > - [比特币如何验证交易](https://zhuanlan.zhihu.com/p/24838810)
 
-### 2.2.3 Private keys
 
-### 2.2.4 Transaction
+
+### 2.2.3 Wallet App
+
+A good way to get started is just to google ‘bitcoin wallets’ and start looking around.
+
+**Electrum**: We’re using electrum for a few reasons. It works on almost any computer. It’s fast and lightweight. And it includes all the functionality we’ll need.
+
+[Getting started with Electrum](https://www.youtube.com/watch?v=WdVlH9N2oKU)
+
+**MetaMask**
+
+**Ganache**
+
+转账
+
+### 2.2.4 Private Keys
+
+**SSH**
+
+**HTTPS**
+
+SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Transport Layer Security，TLS）是为网络通信提供安全及数据完整性的一种安全协议。TLS与SSL在传输层对网络连接进行加密。
+
+### 2.2.5 Transaction
 
 **Sign a Transaction**
 
 **Transaction Lifecycle**
+
+https://zhuanlan.zhihu.com/p/24838810
 
 ## 2.3 Verify Message Signature
 
@@ -516,3 +532,5 @@ Learn to create your identity on the Blockchain and interact with an existing we
 # 4 Blockchain Web Services
 
 # 5 Identity and Smart Contracts
+
+## 5.1 Solidity
