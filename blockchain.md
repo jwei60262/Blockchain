@@ -648,11 +648,40 @@ Figure out which signatures pass verification and which ones fail verification u
 
 # 3 Blockchain Data
 
-### 3.1.1 Data
+### 3.1.1 Database
 
-### 3.1.2 Bitcoin Core
+**Database Contrast**
 
-### 3.1.3 Public and Private Blockchain
+|               | Traditional Database            | Blockchain                             |
+| ------------- | ------------------------------- | -------------------------------------- |
+| Network       | Centralized                     | Distributed                            |
+| Functions     | Create,Read,Update,Delete(CRUD) | Read,append（new record）,and validate |
+| Mutability    | Mutable                         | Inmutable                              |
+| Authorization | Centralized                     | Distributed                            |
+| Transparency  | Low                             | High                                   |
+
+**Traditional Database Security**
+
+- CRUD
+- 灵活性
+- 误删除、恶意攻击
+
+**Blockchain Characteristics**
+
+- 数据需要共识，对网络要求高
+- 不能删除数据，保留完整历史纪录
+- 控制权在所有的节点
+- 需要更多的存储空间
+
+**区块链的适用场景**
+
+- Do you need a database?
+- Does it require shared write access?
+- Will you need to create the trust between users?
+- Can you operate without trusted 3rd parties?
+- Can you operate without control over permissions?
+
+### 3.1.2 Blockchain Type
 
 **Difference**
 
@@ -665,6 +694,19 @@ Figure out which signatures pass verification and which ones fail verification u
 
 去中心化的公链难以监管。
 
+关于公链、私链，可以参考下面链接：
+
+[The difference between public and private blockchains - IBM](https://www.ibm.com/blogs/blockchain/2017/05/the-difference-between-public-and-private-blockchain/)
+
+[3 types of blockchains you need to know - Hackernoon](https://hackernoon.com/3-popular-types-of-blockchains-you-need-to-know-7a5b98ee545a)
+
+**Public private or hybrid**
+
+| Will transactions be public                                  | Public Blockchain  |
+| ------------------------------------------------------------ | ------------------ |
+| Will companies need access to your data                      | Private Blockchain |
+| Should some information be public while other information is restricted | Hybrid Blockchain  |
+
 **Public and private blockchain communication**
 
 链与链之间的交互可以产生跨链（cross chain）操作，跨链操作让不同协议的区块链网络和谐交互，为分布式应用留下了想象空间。跨链、多链的内容可以参考：https://zh.wikipedia.org/zh-hans/Polkadot
@@ -673,6 +715,56 @@ Figure out which signatures pass verification and which ones fail verification u
 
 ![public-private-blockchain-link](/images/public-private-blockchain-link.png)
 
+### 3.1.3 Data
+
+使用 [blockexplorer.js](https://www.npmjs.com/package/blockexplorer) 浏览区块链data
+
+```
+const be = require('blockexplorer');
+
+function getBlock(index) {
+	be.blockIndex(0)
+	  .then((result) => {
+		console.log(result);
+		let hashAux = JSON.parse(result).blockHash;
+		be.block(hashAux).then((block) => {
+			console.log(block);
+			}).catch((err) => {
+				throw err;
+			  });
+	  }).catch((err) => {
+		throw err;
+	  });
+}
+
+(function theLoop (i) {
+	setTimeout(function () {
+        getBlock(i);
+        i++;
+		if (i < 3) theLoop(i);
+	}, 3000);
+  })(0);
+```
+
+查表 [Bitcoin Developer Glosary](https://bitcoin.org/en/developer-glossary#section) 理解区块链data
+
+### 3.1.4 Forks
+
+**Hardforks**
+
+**Softforks**
+
+**Source Code Forks**
+
+### 3.1.5 Bitcoin Core
+
+**Resources**
+
+> - [Bitcoin Codebase](https://github.com/bitcoin/bitcoin)
+> - [Bitcoin Improvement Proposals](https://github.com/bitcoin/bips)
+> - [github.com/litecoin-project/litecoin](https://github.com/litecoin-project/litecoin)
+> -  [Bitcoin Developer Glosary](https://bitcoin.org/en/developer-glossary#section) 
+
 
 
 # 4 Blockchain Web Services
@@ -680,6 +772,8 @@ Figure out which signatures pass verification and which ones fail verification u
 # 5 Identity and Smart Contracts
 
 ## 5.1 Solidity
+
+https://solidity.readthedocs.io/en/v0.5.0/index.html
 
 # 6 DID
 
