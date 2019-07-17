@@ -6,7 +6,6 @@
 5. practice-hashing目录是hash练习的代码模板
 6. recap-of-achieving-consensus.md是几种共识算法的总结
 7. restoring-bc-identity.md是身份恢复的介绍
-8. software-development.md是软件开发的一些心得 
 
 # 培训交流
 
@@ -155,3 +154,49 @@ Fabric，电子发票，征信，药品溯源
 - [JavaScript Style Guide and Coding Conventions](https://www.w3schools.com/js/js_conventions.asp)
 - [JavaScript Best Practices](https://www.w3schools.com/js/js_best_practices.asp)
 - [JavaScript style guide, linter, and formatter](https://standardjs.com/) npm 工具
+
+# 分享软件开发的方法心得
+
+## 软件项目复杂性
+
+采用迭代的方法
+
+## 极限编程
+
+### 结对编程
+
+### TDD——测试驱动开发
+
+1. 极端情况
+
+2. 边界条件
+
+### 代码重构
+
+## 敏捷开发
+
+1. 极限编程
+
+2. scrum
+
+## Devops
+
+将运维与开发融合
+
+## 代码规范的重要性
+
+分布式开发
+
+团队合作开发复杂软件
+
+## 如何写代码注释
+
+注释（comment）需要维护
+
+编码文档化
+
+## 积累自己的工具箱
+
+丰富的工具箱展示解决问题的能力
+
+用好运维工具事半功倍
