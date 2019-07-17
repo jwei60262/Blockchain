@@ -52,3 +52,5 @@ function addDataToLevelDB(value) {
     if (--i) theLoop(i);
   }, 100);
 })(10);
+
+exports.addLevelDBData = addLevelDBData;
