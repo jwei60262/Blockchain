@@ -702,8 +702,9 @@ Figure out which signatures pass verification and which ones fail verification u
 
 **Public private or hybrid**
 
+| 公开程度                                                     | 类型               |
+| :----------------------------------------------------------- | ------------------ |
 | Will transactions be public                                  | Public Blockchain  |
-| ------------------------------------------------------------ | ------------------ |
 | Will companies need access to your data                      | Private Blockchain |
 | Should some information be public while other information is restricted | Hybrid Blockchain  |
 
@@ -717,49 +718,67 @@ Figure out which signatures pass verification and which ones fail verification u
 
 ### 3.1.3 Data
 
-使用 [blockexplorer.js](https://www.npmjs.com/package/blockexplorer) 浏览区块链data
+通过区块链浏览器查看data
+
+https://blockchair.com/
+
+https://www.blockchain.com/explorer 
+
+https://live.blockcypher.com/
+
+https://btc.com/
+
+https://explorer.bitcoin.com/btc
+
+https://explorer.viabtc.com/btc
+
+通过nodejs library [blockexplorer.js](https://www.npmjs.com/package/blockexplorer) 查看data
 
 ```
 const be = require('blockexplorer');
 
-function getBlock(index) {
-	be.blockIndex(0)
-	  .then((result) => {
-		console.log(result);
-		let hashAux = JSON.parse(result).blockHash;
-		be.block(hashAux).then((block) => {
-			console.log(block);
-			}).catch((err) => {
-				throw err;
-			  });
-	  }).catch((err) => {
-		throw err;
-	  });
-}
-
-(function theLoop (i) {
-	setTimeout(function () {
-        getBlock(i);
-        i++;
-		if (i < 3) theLoop(i);
-	}, 3000);
-  })(0);
+be.blockIndex(0)
+  .then((result) => {
+    console.log(result)
+  })
+  .catch((err) => {
+    throw err
+  })
 ```
 
 查表 [Bitcoin Developer Glosary](https://bitcoin.org/en/developer-glossary#section) 理解区块链data
 
 ### 3.1.4 Forks
 
-**Hardforks**
+**Hardforks**: Large change to the blockchain protocol
 
-**Softforks**
+free money
 
-**Source Code Forks**
+![hardforks](/images/hardforks.png)
+
+**Softforks**: Small change to the blockchain protocol
+
+![softforks](/images/softforks.png)
+
+**Source Code Forks**: Copy of blockchain code base with no connection to the origin blockchain
+
+![source-code-forks](/images/source-code-forks.png)
+
+|                          | Hardfork     | Softfork  | Source Code Fork |
+| ------------------------ | ------------ | --------- | ---------------- |
+| Change                   | Large        | Small     | Small or large   |
+| Copies original codebase | Yes          | Yes       | Yes              |
+| Backwards compatible     | No           | Yes       | No               |
+| Split                    | Permanent    | Temporary | Permanent        |
+| Example                  | Bitcoin Cash | Segwit    | Litecoin         |
+
+
 
 ### 3.1.5 Bitcoin Core
 
 **Resources**
 
+> - [Bitcoin Improvement Proposals](https://github.com/bitcoin/bips)
 > - [Bitcoin Codebase](https://github.com/bitcoin/bitcoin)
 > - [Bitcoin Improvement Proposals](https://github.com/bitcoin/bips)
 > - [github.com/litecoin-project/litecoin](https://github.com/litecoin-project/litecoin)
