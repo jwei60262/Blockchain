@@ -2,27 +2,11 @@
 
 In the past couple concepts, you explored the challenges of achieving consensus in a distributed network and how different Blockchains use different Consensus protocols to solve this.
 
-Let’s do a quick recap!
-
-
-
-![img](https://s3.cn-north-1.amazonaws.com.cn/u-img/084b4742-dfdf-4bf3-b598-40f69236ed13)
-
-
-
 ## Byzantine Generals’ Problem
 
 As we saw in the Byzantines’ General Problem, this challenge has been around for a while - achieving consensus in a distributed system with suboptimal communication between participants who do not necessarily trust each other isn’t new.
 
-
-
 ![img](https://s3.cn-north-1.amazonaws.com.cn/u-img/a5479b49-7dc3-4f11-973e-fbb0d2bc8566)
-
-
-
-![img](https://s3.cn-north-1.amazonaws.com.cn/u-img/7138a80a-dff6-4e78-b8df-4fe76d9e35fb)
-
-
 
 ## Proof of Work (PoW)
 
@@ -42,12 +26,6 @@ PoW involves miner nodes, or miners, to solve a math puzzle that requires a lot 
 2. A Monopoloy of Miners which Leads to a Concern for System Centralizations
 
 ## *In addition to Proof of Work, we looked at other forms of Consensus*
-
-
-
-![img](https://s3.cn-north-1.amazonaws.com.cn/u-img/50c2e295-d6f6-4142-9ca8-18a312c39a8e)
-
-
 
 ## Proof of Stake
 
@@ -85,12 +63,6 @@ Additionally there’s the **Punisher** Strategy which simply punishes validator
 
 [Ethereum](https://www.ethereum.org/), [DASH](https://www.dash.org/), and [LISK](https://lisk.io/) are big proponents
 
-
-
-![img](https://s3.cn-north-1.amazonaws.com.cn/u-img/d7ca117a-d981-4e52-9525-8a26b44d3ef9)
-
-
-
 ## Delegated Byzantine Fault Tolerance (dBFT)
 
 dBFT uses a system similar to a democracy where Ordinary Nodes the system vote on representative Delegate Nodes to decide which blocks should be added to the blockchain. When it’s time to add a block, a Speaker is randomly assigned from the group of Delegates to create a new block and propose the new block. *66.66% of delegates need to approve on the block for it to pass.*
@@ -110,12 +82,6 @@ In this case, the chosen Speaker is honest but there are Dishonest Delegates in 
 ### Who’s Using It?
 
 [NEO](https://neo.org/) is a big advocator of this protocol.
-
-
-
-![img](https://s3.cn-north-1.amazonaws.com.cn/u-img/1d93f83a-b1dd-4ce3-8bff-a34c081e7612)
-
-
 
 ## In Conclusion
 

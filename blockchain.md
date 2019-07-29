@@ -1,6 +1,8 @@
-# 1 Blockchain Overview
+# Blockchain 
 
-## 1.1 What Is The Blockchain?
+## 1 Blockchain Overview
+
+### 1.1 What Is The Blockchain?
 
 The blockchain has been described as everything from digital gold to a replacement for the internet.
 
@@ -14,7 +16,7 @@ The blockchain has the potential to revolutionize industries like finance, gover
 
 区块链有可能彻底改变金融，政府和医药等行业。 它甚至重新想象了我们对个人身份和安全的思考方式。
 
-## 1.2 Blockchain Overview
+### 1.2 Blockchain Overview
 
 区块链是一个共享的数据库：
 
@@ -32,9 +34,9 @@ The blockchain has the potential to revolutionize industries like finance, gover
 
 ![blockchain-with-hash](/images/blockchain-with-hash.png)
 
-# 2 Blockchain Components
+## 2 Blockchain Components
 
-## 2.1 Blockchain Basics
+### 2.1 Blockchain Basics
 
 From here, you learn the basics of Blockchain are introduced to topics like Bitcoin to begin creating your very own bitcoin identity.
 
@@ -44,13 +46,13 @@ Things like blocks, hash values, memory pools, consensus, and more will all be i
 
 诸如块，哈希值，内存池，共识等内容都将被引入，定义并添加到您对区块链的理解中！
 
-### 2.1.1 Financial Transactions
+#### 2.1.1 Financial Transactions
 
 Current State of Financial Transactions? 可信的第三方。
 
 Problems with the Current System?
 
-### 2.1.2  Bitcoin
+#### 2.1.2  Bitcoin
 
 The blockchain is a huge topic spanning many platforms and industries. With so much to learn and new updates happening everyday it's tough to know where to start. We believe the best place to start is where it all started - with Bitcoin!
 
@@ -64,7 +66,7 @@ We'll be starting off by going over the basics of Bitcoin!
 
 我们将首先介绍比特币的基础知识！
 
-#### What is Bitcoin?
+**What is Bitcoin?**
 
 Bitcoin is not *THE* blockchain, it is *A* blockchain.
 
@@ -82,7 +84,7 @@ Once you can grasp these core ideas of bitcoin you’ll be able to apply them an
 
 > [bitcoin.org](https://bitcoin.org/en/)
 
-### 2.1.3 Hashing
+#### 2.1.3 Hashing
 
 Hashing is an idea you may already be familiar with. It's a way to create a digital fingerprint for a piece of data. It's a fundamental idea behind what makes the blockchain work. Understanding hashing will help you connect other ideas that we'll discuss later.
 
@@ -92,7 +94,7 @@ Coming up, we'll discuss what hashing is, why it's important, and the basics of 
 
 接下来，我们将讨论散列是什么，为什么重要，以及散列如何有助于区块链结构的基础知识。
 
-#### Hashing Demo
+**Hashing Demo**
 
 Now that you have some idea of how hash values work, lets go through a simple demonstration. Here we'll walk through a website that allows you to experiment with ideas like hash values, blocks, and more. We'll come back to this website a few times throughout the lesson.
 
@@ -106,7 +108,7 @@ You can follow along with this demonstration at [Anders.com](https://anders.com/
 
 > [Cryptographic Hash Function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
 
-### 2.1.4 Blocks
+#### 2.1.4 Blocks
 
 Blocks are the fundamental components of the blockchain. The word "block" is an interesting way to think about the information it stores; but what a block is, might be a little different than you expect.
 
@@ -116,7 +118,7 @@ Shared digital ledger that records a list of transactions.
 
 ![block](/images/block.png)
 
-#### Block Header
+**Block Header**
 
 > Previous Blocks Hash
 
@@ -128,17 +130,17 @@ Shared digital ledger that records a list of transactions.
 
 ![merkle-tree](/images/merkle-tree.png)
 
-#### Block Demonstration
+**Block Demonstration**
 
 You can follow along with this demonstration at [Anders.com](https://anders.com/blockchain/block.html).
 
-### 2.1.5 Blockchain
+#### 2.1.5 Blockchain
 
 Digital ledger that contains the entire history of transactions made on the network.
 
 ![blockchain-linked-hash](/images/blockchain-linked-hash.png)
 
-#### 思考几个问题
+**思考几个问题**
 
 > Valid block?
 
@@ -148,11 +150,11 @@ Digital ledger that contains the entire history of transactions made on the netw
 
 > Block height?
 
-#### Blockchain Demo
+**Blockchain Demo**
 
 You can follow along with this demonstration at [Anders.com](https://anders.com/blockchain/blockchain.html).
 
-#### Wrapping Up
+**总结**
 
 We made it through the basics of blockchains. Great work! Having a better idea of how blocks and blockchains are formed is great, but it leaves us with one big question.
 
@@ -166,7 +168,7 @@ The answer is interesting. It's stored across a network of users that all have t
 
 答案很有趣。 它存储在一个用户网络中，这些用户都拥有自己的区块链副本。 没有用户拥有这些数据，每个人都可以访问，任何人都可以参与。
 
-### 2.1.6 Distributed Peer-to-Peer Networks
+#### 2.1.6 Distributed Peer-to-Peer Networks
 
 The idea of a network is what allows the blockchain to bypass the need for 3rd parties like we discussed earlier.We'll go over how that happens, what the network is, and why it's so important to making an effective blockchain.
 
@@ -196,7 +198,7 @@ Distributed Peer-to-Peer区块链网络：
 
 ![distributed-p2p-network](/images/distributed-p2p-network.png)
 
-### 2.1.7 Memory Pool
+#### 2.1.7 Memory Pool
 
 Before getting onto the blockchain or becoming part of the network, transactions go into what is known as the memory pool.
 
@@ -219,7 +221,7 @@ Waiting place for all unconfirmed transactions before they are added to the bloc
 
 > [Bitcoin Visuals](https://bitcoinvisuals.com/stats) - Another fun site to check bitcoin stats (e.g. fees, mempool, block speed, and hashrate)
 
-### 2.1.8 Consensus
+#### 2.1.8 Consensus
 
 **Consensus:**
 
@@ -248,7 +250,7 @@ Byzantine Generals Problem:
 1. 网络中存在恶意节点
 2. 节点之间不能有效的沟通
 
-### 2.1.9 Proof of Work
+#### 2.1.9 Proof of Work
 
 One of the first algorithms created for consensus is known as **proof of work**. The idea behind **proof of work** is that whoever puts in the most work to contribute to the system is the most trustworthy.
 
@@ -278,7 +280,7 @@ To  [Anders.com](https://anders.com/blockchain/block.html),you will go over a de
 
 2. A Monopoly of miners leads to concern for Centralization
 
-### 2.1.10 Proof of Stake
+#### 2.1.10 Proof of Stake
 
 There are no miners, There are validators--stakeholders. 
 
@@ -301,6 +303,16 @@ In chain-based proof of stake, the algorithm pseudo-randomly selects a validator
 > 3. 算法在每个时隙中伪随机选择一个验证器validator，validator获得权限，创建区块。选择validator的过程依赖validator的投注（投注 = 币龄 = 币量 * 币持有时间）。
 > 4. 验证节点验证区块。验证通过之后validator获得回报。
 > 5. 区块最终入链
+
+**Potential Issues**
+
+We discussed the “Nothing At Stake” problem in which a bad acting Validator places bets on multiple forks so they theoretically always win out in the end.
+
+**Proposed Solutions**
+
+**Slasher** Strategy which entails penalizing validators if they simultaneously create blocks on multiple chains.
+
+Additionally there’s the **Punisher** Strategy which simply punishes validators for creating blocks on the wrong chain. In this method, Validators will be motivated to be selective and conscious about the blockchain in which they put their stake.
 
 **Resources**
 
@@ -325,7 +337,7 @@ Also check out Ethereum's Proof of Stake FAQ which provides more details around 
 
 > [Ethereum’s Proof of Stake FAQs](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQs)
 
-### 2.1.11 Other Consensus Algorithms
+#### 2.1.11 Other Consensus Algorithms
 
 **Proof of Work**
 
@@ -364,9 +376,9 @@ Also check out Ethereum's Proof of Stake FAQ which provides more details around 
 
 > - [What is Proof of Burn?](https://99bitcoins.com/what-is-proof-of-burn/)
 
-## 2.2 Blockchain Transactions
+### 2.2 Blockchain Transactions
 
-### 2.2.1 Blockchain Identity
+#### 2.2.1 Blockchain Identity
 
 币的拥有者可以花费币，交易不被追溯
 
@@ -402,7 +414,7 @@ Wallets can contain one or mare of  these private keys and these should not be s
 
 ![wallet-address](/images/wallet-address.png)
 
-### 2.2.2 Wallet
+#### 2.2.2 Wallet
 
 **Non-deterministic Wallet**: (random wallets) A wallet where private keys are generated from random numbers.
 
@@ -487,7 +499,7 @@ HD Wallet基于BIP-32
 > - [为什么使用地址而不是公钥](https://haoduoshipin.com/videos/357/)
 > - [比特币如何验证交易](https://zhuanlan.zhihu.com/p/24838810)
 
-### 2.2.3 Wallet App
+#### 2.2.3 Wallet App
 
 A good way to get started is just to google ‘bitcoin wallets’ and start looking around.
 
@@ -522,7 +534,72 @@ We’re using electrum for a few reasons. It works on almost any computer. It’
 3. 在MetaMask中导入Ganache钱包地址，查看变化；
 4. 尝试转账，查看变化。
 
-### 2.2.4 Public Key Infrastructure
+#### 2.2.4 Restore your Wallet Identity
+
+We’ve all forgotten passwords from time to time, and no one is immune from password horror stories!
+
+There are times you may end up needing to restore your wallet identity.
+
+**This could happen for a few reasons**
+
+- You might forget your password.
+- You could lose the 2-step verification device.
+- The wallet service might even become unavailable.
+- It’s also possible that you lose your computer or it gets stolen.
+
+Hopefully none of these things happen, but it’s important to be ready just in case!
+
+To help prepare for situations like this, it’s helpful to know how to restore your bitcoin wallet.
+
+**Ways to Restore a Wallet**
+
+If you ever need to restore your wallet, there are 2 ways to do it. You can do it with the wallet words you saved, or with the private keys from when you first created your wallet.
+
+##### Use a Seed
+
+One way to restore a wallet is using a seed. The ‘seed’ is the 12 words you were given when creating your wallet. If you can remember these words, you can use them to restore your wallet!
+
+The benefit of restoring your identity using the seed is that it can be much simpler than using the private key. It's easier to remember a list of words than a random string of numbers and letters.
+
+The hardest part to any of this is safely storing or remembering this information for when you need it. Anybody else who discovers the list of words can access the wallet and any funds tied to it.
+
+So be VERY careful!
+
+##### Use a Private Key
+
+Another way to restore a wallet is with a private key.
+
+When restoring a wallet using a private key, there are 2 ways to do it. You can either import or sweep this key, and it’s useful to understand the difference.
+
+- **Import a Private Key**
+
+When importing a private key, you'll have a source wallet and a destination wallet. The destination wallet is likely filled with a group of private keys already. To import the key you move the private key from the source wallet to the destination wallet.
+
+This results in you getting access to both the source wallet AND the destination wallet.
+
+The downside to importing is that the private key from the source wallet is essentially compromised since it was shared. If someone gets access to the private key from the source wallet, they can access those bitcoins.
+
+See more on how to import a private key at [BitcoinElectrum.com](https://bitcoinelectrum.com/importing-your-private-keys-into-electrum/).
+
+- **Sweep a Private Key**
+
+When you sweep a private key, you add a private key from a source wallet into the destination wallet. All the bitcoins that belong to that private key are swept from the source wallet over into the destination wallet.
+
+This is a little different than importing because it completely removes the funds from the original wallet. You’ll now only be using this new wallet to make future transactions.
+
+See more on how to sweep a private key at [BitcoinElectrum.com](https://bitcoinelectrum.com/sweeping-your-private-keys-into-electrum/).
+
+**Which should you choose?**
+
+Why would you import or sweep a private key?
+
+Sweep a wallet if you're worried about wallet security.This might happen in the case that you think someone might have access to your private key. Sweeping completely cleans out the wallet so that no one will have access to your bitcoins.
+
+If you are certain no one has gotten access to your private key, and that no one ever will, then you can import the key instead. This is useful in cases where you need the funds to be available from multiple wallets.
+
+When in doubt, stick with sweeping. It’s more secure this way, and it avoids some problems that are associated with importing a wallet.
+
+#### 2.2.5 Public Key Infrastructure
 
 **Private Keys**
 
@@ -570,7 +647,7 @@ SSL(Secure Sockets Layer 安全套接层),及其继任者传输层安全（Trans
 
 参考 https://www.cnblogs.com/franson-2016/p/5530671.html
 
-### 2.2.5 Transaction
+#### 2.2.6 Transaction
 
 **Sign a Transaction**
 
@@ -599,9 +676,9 @@ Unspent transaction output known as UTXO。
 
 交易验证的脚本参考：https://zhuanlan.zhihu.com/p/24838810
 
-## 2.3 Message Signature
+### 2.3 Message Signature
 
-### 2.3.1 Generate Key Pair and a Wallet Address
+#### 2.3.1 Generate Key Pair and a Wallet Address
 
 下面几种方式都可以生成key和address。
 
@@ -611,7 +688,7 @@ Unspent transaction output known as UTXO。
 
 MetaMask
 
-### 2.3.2 Sign a Message
+#### 2.3.2 Sign a Message
 
 通过签名算法(signing algorithm)签名
 
@@ -621,7 +698,7 @@ MetaMask
 - Integrity - The recipient and sender can prove the message was not altered in transmission.
 - Non-repudiation - The Sender cannot deny sending the message.
 
-### 2.3.3 Verify a Message
+#### 2.3.3 Verify a Message
 
 传入Wallet Address, the *Signature*, and a Message到验证算法，进行验证。
 
@@ -636,7 +713,7 @@ const message = 'This is an example of a signed message.'
 console.log(bitcoinMessage.verify(message,address,signature));
 ```
 
-### 2.3.4 Sign and Verify
+#### 2.3.4 Sign and Verify
 
 ![sign-verify](/images/sign-verify.png)
 
@@ -644,11 +721,11 @@ Use Bitcoin Javascript Libraries to sign and verify messages that authenticate t
 
 Figure out which signatures pass verification and which ones fail verification using the Bitcoin Javascript Library [bitcoinjs-message](https://github.com/bitcoinjs/bitcoinjs-message).
 
-[Segwit ](https://zhuanlan.zhihu.com/p/32613487)就是把脚本签名(scriptSig)信息从基本结构 (base block) 里拿出来，放在一个新的数据结构当中。做验证工作的节点和矿工**也会验证这个新的数据结构里**的脚本签名，以确保交易是有效的。
+[bitcoinjs-message](https://github.com/bitcoinjs/bitcoinjs-message)中提到的[Segwit ](https://zhuanlan.zhihu.com/p/32613487)是指把脚本签名(scriptSig)信息从基本结构 (base block) 里拿出来，放在一个新的数据结构当中。做验证工作的节点和矿工也会验证这个新的数据结构里的脚本签名，以确保交易是有效的。
 
-# 3 Blockchain Data
+## 3 Blockchain Data
 
-### 3.1.1 Database
+### 3.1 Database
 
 **Database Contrast**
 
@@ -681,7 +758,7 @@ Figure out which signatures pass verification and which ones fail verification u
 - Can you operate without trusted 3rd parties?
 - Can you operate without control over permissions?
 
-### 3.1.2 Blockchain Type
+### 3.2 Blockchain Type
 
 **Difference**
 
@@ -716,7 +793,7 @@ Figure out which signatures pass verification and which ones fail verification u
 
 ![public-private-blockchain-link](/images/public-private-blockchain-link.png)
 
-### 3.1.3 Data
+### 3.3 Data
 
 通过区块链浏览器查看data
 
@@ -748,7 +825,7 @@ be.blockIndex(0)
 
 查表 [Bitcoin Developer Glosary](https://bitcoin.org/en/developer-glossary#section) 理解区块链data
 
-### 3.1.4 Forks
+### 3.4 Forks
 
 **Hardforks**: Large change to the blockchain protocol
 
@@ -774,7 +851,7 @@ free money
 
 
 
-### 3.1.5 Bitcoin Core
+### 3.5 Bitcoin Core
 
 **Resources**
 
@@ -786,15 +863,202 @@ free money
 
 
 
-# 4 Blockchain Web Services
+## 4 Blockchain Web Services
 
-# 5 Identity and Smart Contracts
+## 5 Identity and Smart Contracts
 
-## 5.1 Solidity
+### 5.1 Solidity
 
-https://solidity.readthedocs.io/en/v0.5.0/index.html
+A brief Solidity review provided . For full developer documentation, review the following: https://solidity.readthedocs.io/en/v0.4.24/，https://solidity.readthedocs.io/en/v0.5.0/index.html
 
-# 6 DID
+Topics covered in this section are:
+
+- Solidity versioning
+- Contracts
+- Variables
+  - Variable types
+  - Booleans
+  - Integers
+  - Addresses
+  - Strings
+  - Variable definition
+- Arithmetics
+  - Arithmetic operations
+- Structs
+- Mappings
+
+#### 5.1.1 Solidity versioning
+
+Solidity source files can contain any number of contract definitions. Each Solidity file also includes a thing called "Version Pragma". It is used to prevent the code from being compiled with future compiler versions that might introduce incompatible changes. Most of the time, the definition looks like this:
+
+```
+pragma solidity ^0.4.20;
+```
+
+In the example above 0.4.20 is the desired compiler version.
+
+#### 5.1.2 Contracts
+
+Now, let's put it into code.
+
+Contracts in Solidity are similar to classes in object-oriented languages. They contain data in variables and functions that can modify these variables.
+
+They are defined by using a contract keyword, followed by the contract name and two brackets { } which will later enclose contract variables and functions. For example:
+
+```
+pragma solidity ^0.4.20;
+
+contract ParentObject {
+
+
+
+}
+```
+
+#### 5.1.3 Variables
+
+Wow! You've successfully created the frame of your contract! Now, it's time to start learning about how your contract will work. We'll start by finding out what type of variables there are.
+
+**Variable types**
+
+State variables are used to store information on the blockchain. They can also be manipulated by the functions within the contract.
+
+Solidity is a statically typed programming language, meaning that each variable must have its type specified. Examples of the main data types:
+
+**Booleans**
+
+Can only have one of the two following values: true or false. The keyword for booleans is bool.
+
+**Integers**
+
+Integers can be split into main groups: regular integers (can store both positive and negative values) and unsigned integers (can only store values that are 0 or higher)
+
+Regular integer has keywords from int8 to int256. The number signifies the maximum number of bits it can store (thus limiting the maximum value), and it can be any number between 8 and 256 as long as it incremented in steps of 8 (e.g., int16 is valid but int17is not). The int keyword alone would be understood as int256.
+
+Unsigned integers follow the same logic. The only difference is the keyword which ranges from uint8 to uint256. Keyword uintcan also be used instead of uint256.
+
+**Addresses**
+
+The address keyword is used to hold Ethereum addresses. If you're planning to store an Ethereum address, you will need to use the address keyword.
+
+**Strings**
+
+The string variable is used to store text information. If you need to store a variable that should contain text information use the string keyword.
+
+**Variable definition**
+
+There are more data types, but we will go into more details in further lessons.
+
+Variables and their values are defined like this.
+
+contract Pizza {
+
+```
+bool isWarm = true;
+
+uint slicesLeft = 3;
+```
+
+}
+
+```
+pragma solidity ^0.4.20;
+
+contract ParentObject {
+
+    // Write your solution below
+
+    uint maxChildrenPerParentOpject = 10;
+
+    uint minChildrenPerParentOpject = 1;
+
+}
+```
+
+#### 5.1.4 Arithmetics
+
+Now that you learned to define the variables for your contract, it's time to go through some basic math commands that will be useful later for defining your smart contract code.
+
+**Arithmetic operations**
+
+Integers can be used for arithmetic operations:
+
+- Addition x + y
+- Subtraction x - y
+- Multiplication x * y
+- Division x / y
+- Remainder x % y
+- Exponentiation x ** y (x to the power of y)
+
+For example:
+
+```
+uint x = 16;
+uint pizza = 4;
+uint result = 0;
+result = x + pizza;     // 16 + 4 = 20
+result = x - pizza;     // 16 - 4 = 12
+result = x * pizza;     // 16 * 4 = 64
+result = x / pizza;     // 16 / 4 = 4
+result = x % pizza;     // 16 % 4 = 0
+result = x ** pizza;    // 16 ^ 4 = 65536
+```
+
+A real world example:
+
+```
+uint pizzaSlices = 6;
+
+uint people = 2;
+
+uint slicesPerPerson = pizzaSlices / people;
+```
+
+#### 5.1.5 Structs
+
+As we've learned the basics for defining variables, now we will learn to create the structure that defines your variables properties: name, type, coordinates (X and Y), and so forth.
+
+**Structs**
+
+A struct is a special data type that allows the programmer to group a list of variables.
+
+Structures are defined like this:
+
+struct Car {
+
+```
+string make;
+
+string model;
+
+uint16 year;
+
+uint16 horsepower;
+```
+
+}
+
+#### 5.1.6 Mappings
+
+Now that you've defined your variables, we'll learn how to create a variable that will later map your variable to the blockchain - a special list where all other variables are stored.
+
+Mappings allow the programmer to create key-value pairs and store them as a list. Concepts like this also are known as hash tables.
+
+Mappings are defined like this:
+
+mapping(key_type => key_value) mappingName;
+
+key_type should be replaced by a data type. Two commonly used variable types for mapping keys that we already know about are address and uint. It is important to note that not every data type can be used as a key. For instance, structs and other mappings cannot be used as keys.
+
+Similarly, key_value should be replaced by the value type. Unlike with keys, Solidity does not limit the data type for values. It can be anything, including structs and other mappings.
+
+A real-world example of a mapping:
+
+mapping(address => uint256) balance;
+
+This mapping could hold the bank account balance in uint256 for the given address.
+
+## 6 DID
 
 分布式身份管理
 
