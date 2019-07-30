@@ -1,7 +1,7 @@
 # 文档介绍
 1. 本文档介绍培训交流的项目、内容、常用工具、代码规范和软件开发方法
-2. blockchain.md是区块链文档，介绍区块链的基本知识
-3. project-practice.md是动手练习文档，练习的步骤说明
+2. [blockchain.md](blockchain.md)是区块链文档，介绍区块链的基本知识
+3. [project-practice.md](project-practice.md)是动手练习文档，练习的步骤说明
 4. practice-block目录是“区块”练习的代码模板
 5. practice-hashing目录是“hash”练习的代码模板
 6. practice-private-blockchain目录是private blockchain练习的代码模板
