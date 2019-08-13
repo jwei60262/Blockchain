@@ -637,6 +637,10 @@ Entropy: Lack of order or predictability. The degree of disorder or randomness i
 
 钱包可以生成私钥和地址。
 
+**编程方式生成私钥**
+
+https://github.com/bitcoinjs/bitcoinjs-message
+
 **SSH**
 
 使用putty或xshell登陆远程服务器。
