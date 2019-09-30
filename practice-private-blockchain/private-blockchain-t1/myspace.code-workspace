@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false
+    },
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "C:\\Users\\wj\\Documents\\private-blockchain-t2"
+        }
+    ]
+}
