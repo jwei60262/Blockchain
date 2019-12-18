@@ -869,6 +869,262 @@ free money
 
 ## 4 Blockchain Web Services
 
+### 4.1 Planning a Web Service
+
+Learn to scope and decide and the appropriate backend and/or frontend web services to use for your blockchain application.
+
+#### Testing Endpoints
+
+When we are developing a RESTful API, we need to test our endpoints. To do that, we are going to introduce 2 powerful tools - Postman and Curl.
+
+There are other tools available, so feel free to use those if you're already familiar with them.
+
+##### Postman
+
+POSTMAN is an application that allow you to test your endpoints with a Graphical User Interface.
+
+To install Postman, go to [Postman](https://www.getpostman.com/), download, and install the appropriate package for your OS.
+
+Once you have it installed locally on your computer, let's do this test:
+
+Open Postman and paste: https://maps.googleapis.com/maps/api/directions/json?origin=Florence&destination=Milan&waypoints=Genoa|Bologna|Venice&optimizeWaypoints=true&key=[YOUR_API_KEY].
+
+Then, check the parameters in the param button and hit "SEND." The application will make a request and show you the response from the server api, as shown in the video below.
+
+##### CURL
+
+CURL is used in command lines or scripts to transfer data, so it can be used to test our RESTful APIs.
+
+Let's check a quick example copy the following code and paste it in your Terminal:
+
+If you are interested in learning more about this great tool, check out this [free Curl book](https://curl.haxx.se/book.html).
+
+### 4.2 Web Services with Node.js
+
+Welcome! The focus of this lesson is to familiarize you with RESTful frameworks for Node.js. We will walk through 3 specific frameworks - Express, Sails, and Hapi.
+
+Node.js is commonly used in the world of web development, so it's no surprise there are many frameworks, platforms, and libraries that leverage it for building Web APIs. Here's an article discussing 13 important ones:
+
+[13 Node.js Frameworks to Build Web APIs](https://nordicapis.com/13-node-js-frameworks-to-build-web-apis/)
+
+**Framework Homepages**
+
+[Expressjs.com](https://expressjs.com/)
+
+[Sailsjs.com](https://sailsjs.com/)
+
+[Hapijs.com](https://hapijs.com/)
+
+### 4.3 Utilizing Third-Party Libraries
+
+So far in the course, you went through the planning stages for integrating your private blockchain to a web service then delved into Node.js frameworks.
+
+This is a quick lesson where, we'll take a look at some common libraries associated with these frameworks which we'll be using in the upcoming project and discuss the ever-growing importance of handling security on a blockchain web service.
+
+**Resources**
+
+- [bitcoin-core npm package](https://www.npmjs.com/package/bitcoin-core)
+- [ethereumjs-util npm package](https://www.npmjs.com/package/ethereumjs-util)
+- [general query for blockchain npm packages](https://www.npmjs.com/search?q=keywords:blockchain)
+
+**bitcoin-core Example**
+
+**Example:** VerifyMessage RPC function using bitcoin-core Node.js.
+
+```javascript
+const bitcoin = require('bitcoin');
+
+// Bitcoin-core: verifyMessage
+function verifyMessage(walletAddress, signature, message){
+ response = 'false';
+ const client = new bitcoin.Client({
+   host: 'localhost',
+   port: 8332,
+   user: 'user',
+   pass: 'password!'
+ });
+ client.cmd('verifymessage', walletAddress, signature, message, function(err, result, resHeaders) {
+   if (err) {
+     // console.log(err);
+     return console.log("Incorrect submission");
+   }
+   if (result===true) {
+     console.log('Validation passed');
+   }  
+   console.log(' Validation: ', result);
+   response = result;
+ })
+};
+```
+
+That was a short, but really important discussion on third-party library, security best practices, and multisig wallets.
+
+- Discovered and used common third-party libraries
+  - Remember the best practices when finding your own third-party libraries
+- Used Bitcoin Core as an example to discover third-party libraries to assist with RPC functions we’ve seen before
+  - bitcoin-core and ethereumjs-util
+- Discussed the risks and precautions of working with third-party libraries and wallets (or anything that stores value)
+  - Multisig wallets that use an M-of-N transaction sheme
+
+### 4.4 Digital Assets
+
+Welcome to this section on **digital assets**! In this section we'll go over some of the basic ideas behind digital assets like what they are, why they're important, and how they are related to the blockchain. The goal is to help get you prepared to work with digital assets for yourself using your own private blockchain.
+
+**Digital Asset** *- Digitally stored content or online account owned by an individual*
+
+**Resources**
+
+> [Gif](https://techterms.com/definition/gif)
+
+> [JPG](https://techterms.com/definition/jpeg)
+
+> [MP3](https://techterms.com/definition/mp3)
+
+Now that we went over some of the fundamental concepts behind digital assets, we'll move onto some new ideas related to how these assets stored and transferred online. The core idea here is around encoding and decoding and we'll discuss more about that in the next section.
+
+**Key Terms**
+
+> **Encode** - Process of putting a sequence of characters into a specialized format for efficient transmission or storage
+
+> **Decode** - Takes encoded, raw, unreadable files and converts them back into human readable format
+
+> **ASCII** - American Standard Code for Information Interchange
+
+> **Hexadecimal** - More concise and human readable representation of binary
+
+> **Base64** - Encoding scheme meant to represent data as numbers in a string format
+
+> **ASCII**
+>
+> - [How numbers are encoded as character is ASCII](http://www.asciitable.com/)
+> - [Text to ASCII Converter](http://www.unit-conversion.info/texttools/ascii/)
+> - [ASCII Wiki](https://en.wikipedia.org/wiki/ASCII)
+
+> **Hexadecimal**
+>
+> - [How do HEX color codes work?](https://www.youtube.com/watch?v=c56x1aj2CPA)
+> - [Text to Hex Converter](http://www.convertstring.com/EncodeDecode/HexEncode)
+> - [Hexadecimal Wiki](https://en.wikipedia.org/wiki/Hexadecimal)
+
+> **Base64**
+>
+> - [Base64 Encoding](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding)
+> - [Text to Base64 Converter](https://www.base64encode.org/)
+> - [Base64 Wiki](https://en.wikipedia.org/wiki/Base64)
+
+**Encode and Decode Text from Terminal**
+
+- String to hex: `xxd -p <<< "Blockchain Developer"`
+- Hex to string: `echo 426c6f636b636861696e20446576656c6f7065720a|xxd -r -p`
+
+**Encode and Decode Text from Terminal Using Files**
+
+- Create file: `touch hello.txt`
+- Add text to file
+- String to Hex: `xxd -p hello.txt helloEncoded.txt`
+- Hex to String: `xxd -p -r helloEncoded.txt helloDecoded.txt`
+
+**Encode and Decode Image from Terminal Using Files**
+
+- Find image file and place in directory
+- Image to Hex: `xxd -p cat.png cat.txt`
+- Hex to Image: `xxd -p -r cat.txt catDecoded.png`
+
+**Encode the Image**
+
+Here is how we filled in the rest of this code. Don't worry if you didn't get it, we haven't taught this yet but thought you might like to give it a shot!
+
+```
+// Require file system access
+fs = require('fs');
+
+// Read file buffer 
+imgReadBuffer = fs.readFileSync('test-pattern.jpg');
+
+// Encode image buffer to hex
+imgHexEncode = new Buffer(imgReadBuffer).toString('hex');
+
+// Output encoded data to console
+console.log(imgHexEncode);
+```
+
+**Decode the Image**
+
+Here is the code for how to decode this image. Run this in your file to see the decoded image in your project directory.
+
+```
+// Decode hex
+var imgHexDecode = new Buffer(imgHexEncode, 'hex');
+
+// Save decoded file file system 
+fs.writeFileSync('decodedHexImage.jpg', imgHexDecode);
+```
+
+#### **Proof of Existence**
+
+**Proof of Existence:** The concept that publicly proving and authenticating any digital asset on the blockchain by verifying its hash.
+
+We just saw how to use a pre-created notarization service. What’s really cool is that it’s possible for anyone, including us, to create a web application that verifies the existence of digital assets this same way.
+
+For example, there are other services in the space such as Factom, OriginTimestamp, and Florincoin. Feel free to check some of these out!
+
+**Proof of Existence Services**
+
+> [Poex.io Demo](http://poex.io/)
+
+> [Factom](http://factom.org/)
+
+> [Origin Timestamp](http://www.originstamp.org/)
+
+> [Floricoin](http://florincoin.org/)
+
+##### **Why do we need POE**
+
+Before trying to use this for ourselves, here’s a few quick ideas over why you might even want to to do this in the first place.
+
+**Helps you demonstrate data ownership without revealing actual data.**
+
+- This is useful for things like copyrighted material or patents.
+
+**Checks for the integrity of your digital asset. Any proof of existence will recognize your document FOREVER.**
+
+- Even the slightest difference will be recognized allowing you to be sure your asset hasn’t changed.
+
+**Provides document Time stamping.** You can use this to prove certain information existed at a certain time.
+
+- This can be useful in cases where you want to prove who was the original owner of the document.
+
+**Certifies the existence of the document without the need for a central authority.**
+
+- Similar to many blockchain concepts this decentralized proof can’t be erased or modified by anyone.
+
+
+##### POE Algorithms
+
+There are a different of algorithms to demonstrate Proof of Existence. The two we have chosen to focus on here are SHA256 and MD5.
+
+They both serve the same purpose. They’re a way to hash a digital asset so it can be embedded in a transaction in the blockchain. This allows people to verify that a document existed at a certain point in time.
+
+**SHA256**
+
+This is an algorithm we’ve seen already in several different parts of the Bitcoin network. It’s used in mining as part of the proof of work algorithm.
+
+It’s also used to create secured bitcoin addresses.
+
+SHA256 stands for Secure Hash Algorithm. It is a one-way hashing function that takes in any piece of data and produces a unique hash.
+
+This is the algorithm POEX uses to secure their digital documents.
+
+**MD5**
+
+Next, the MD5 algorithm is a hash function that takes in a String input and produces a 128-bit hash value. This value is usually shown as a 32-character hexadecimal number that humans can read.
+
+**Goals of POE Algorithms**
+
+While each method does things a bit differently, the important thing to remember is their purpose.
+
+They hash digital assets to hide the actual content. Once the hashed data is embedded in a transaction in the blockchain, the existence of that transaction in the blockchain proves that the document existed at the time the transaction got included into a block.
+
 ## 5 Identity and Smart Contracts
 
 ### 5.1 Solidity
@@ -913,9 +1169,6 @@ They are defined by using a contract keyword, followed by the contract name and 
 pragma solidity ^0.4.20;
 
 contract ParentObject {
-
-
-
 }
 ```
 
