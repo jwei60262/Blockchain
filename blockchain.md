@@ -1281,19 +1281,18 @@ A struct is a special data type that allows the programmer to group a list of va
 
 Structures are defined like this:
 
+```
 struct Car {
 
-```
-string make;
+    string make;
 
-string model;
+    string model;
 
-uint16 year;
+    uint16 year;
 
-uint16 horsepower;
-```
-
+    uint16 horsepower;
 }
+```
 
 #### 5.1.6 Mappings
 
