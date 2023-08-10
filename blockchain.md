@@ -322,10 +322,7 @@ Additionally there’s the **Punisher** Strategy which simply punishes validator
 >
 > - Switching from PoW to PoS in the Casper Project
 
-> [Dash](https://www.dash.org/) 
->
-> - A Pioneer of PoS
-> - Built form the core Bitcoin platform with added features for privacy and Tx speed
+> [peercoin](https://www.peercoin.net/) 
 
 > [Lisk](https://lisk.io/) 
 >
